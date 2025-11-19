@@ -11,7 +11,7 @@ n = 0
 print("Vous êtes Walter Black, un professeur d'informatique de lycée. En vous réveillant, vous checker vos mails et apprenait que la direction vous a viré car votre métier se fait remplacer par une intelligence artificielle")
 print("Cette nouvelle vous attriste car ces derniers temps, vous avez quelques soucis financiers... ")
 # Premier choix
-print("Pendant que vous déprimé votre collègue vous appel car il a reçu le même mail")
+print("Pendant que vous déprimé votre collègue vous appel car il a reçu le même mail.")
 print("Face à la situation vous décidez :" )
 print(" 1)De sortir boire un coup au bar pour vous changer les idées\n 2)D'aller manifester devant le lycée avec d'autres enseignants dans votre cas ")
 reponse_1 = input("Quel choix(sélectionnez le numéro) : ")
@@ -74,18 +74,25 @@ elif int(reponse_1) == 2:
 	print("1)Sortir votre paf et leur courir dessus.\n 2) Tenter un 1v1 avec un CRS malgré le fait que vous soyez moins imposant qu'un moustique.\n 3) Dire à un CRS que sa soeur est belle (mauvaise idée).\n 4)Leur jeter dessus le plus gros pavé que vous trouvez.")
 	reponse_2 = input("Que choisissez-vous ?")
 	if int(reponse_2) in [1, 2, 3, 4]:
-		print("\nÉnervez un CRS n'était pas la meilleure idée, vous vous retrouvez en garde en vue.")
+		print("\nÉnerver un CRS n'était clairement pas une bonne idée...")
+		print("Vous êtes placé en garde à vue. Chaque journée semble interminable.\n")
 		jour = 1
-		for i in range (1,4):
-			print(f"C'est le jour {jour} de garde à vue. Les policiers pensent que vous ne leur avez pas tout dit, ils continuent de vous poser des questions pour la journée.")
-			jour = jour+1
-	print("\nMalgré le fait que les policiers ont décidés d'abandonner la garde à vue, ils décident de vous faire passer un peu de temps en cellule avec des personnes très peu sympatiques...")
-	print("Un de vos condétenu, un géorgien de 2m10 et 110kg de muscle avec un t-shirt et un short ufc, vous demande de lui passer vos chaussures car <<elles lui iraient très bien>>. Vous décidez de:\n 1)Vous tentez de le frapper le plus fort possible au visage, même si son menton semble plus solide que les barreaux de votre cellule.\n 2) Vous lui passez vos chaussures comme le bon toutou que vous êtes.")
-	(reponse_2_1) = input("Que choisissez-vous?")
-	if int(reponse_2_1) == 1:
-		print("\nVous vous faites mal à la main en essayant de le frapper, il finit par vous soulever et vous lancer sur le sol de la celulle. Il récupère vos chaussures pendant que vous pleurez par terre.")
-	elif int(reponse_2_1) == 2:
-		print("\nContent de sa nouvelle paire de chaussures, il décide de vous laisser tranquile pour le reste du temps.")
-	print("Un autre codétenu vous aborde, il vous explique qu'il est un dealer et il vous propose d'acheter ou de rentrer dans son réseau. Vous décidez de:\n 1) Acheter un peu de métamphétamine pour votre consommation personnelle, vous avez jamais testé et vous êtes curieux.\n 2) Vous acceptez son offre car vous n'avez plus rien, c'est votre seul moyen de faire de l'argent.\n 3) Vous le dénoncez au policier qui surveille votre cellule car vous savez que vous sortez avant lui")	
-	reponse_2_A = input("Que choisissez-vous ?")
+		nb_jours = 3   # durée de la garde à vue
+		while jour <= nb_jours:
+			input(f"Appuyez sur Entrée pour passer au jour {jour}...")
+			print(f"\n📅 Jour {jour} de garde à vue")
+			print("Les policiers pensent que vous cachez encore quelque chose.")
+			print("Ils vous interrogent toute la journée...\n")
+			jour = jour + 1
+		print(" La garde à vue prend fin après ces longues heures de pression.")
+		print("Malgré le fait que les policiers ont décidés d'abandonner la garde à vue, ils décident de vous faire passer un peu de temps en cellule avec des personnes très peu sympatiques...")
+		print("\nUn de vos condétenu, un géorgien de 2m10 et 110kg de muscle avec un t-shirt et un short ufc, vous demande de lui passer vos chaussures car <<elles lui iraient très bien>>.")
+		print("Vous décidez de:\n 1)Vous tentez de le frapper le plus fort possible au visage, même si son menton semble plus solide que les barreaux de votre cellule.\n 2) Vous lui passez vos chaussures comme le bon toutou que vous êtes.")
+		(reponse_2_1) = input("Que choisissez-vous?")
+		if int(reponse_2_1) == 1:
+			print("\nVous vous faites mal à la main en essayant de le frapper, il finit par vous soulever et vous lancer sur le sol de la celulle. Il récupère vos chaussures pendant que vous pleurez par terre.")
+		elif int(reponse_2_1) == 2:
+			print("\nContent de sa nouvelle paire de chaussures, il décide de vous laisser tranquile pour le reste du temps.")
+		print("Un autre codétenu vous aborde, il vous explique qu'il est un dealer et il vous propose d'acheter ou de rentrer dans son réseau. Vous décidez de:\n 1) Acheter un peu de métamphétamine pour votre consommation personnelle, vous avez jamais testé et vous êtes curieux.\n 2) Vous acceptez son offre car vous n'avez plus rien, c'est votre seul moyen de faire de l'argent.\n 3) Vous le dénoncez au policier qui surveille votre cellule car vous savez que vous sortez avant lui")	
+		reponse_2_A = input("Que choisissez-vous ?")
 	
