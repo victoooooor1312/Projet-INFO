@@ -95,9 +95,9 @@ elif int(reponse_1) == 2:
 		reponse_DEAL = input("Que choisissez-vous ?")
 		
 		if reponse_2_A == 1 :
-    		print("\nVous acceptez « juste pour essayer ». Le codétenu vous glisse un petit morceau de cristal.")
-    		print("Vous hésitez… puis vous le prenez. Quelques minutes plus tard, un rush violent vous traverse, des sensations fortes.")
-    		print("Votre cœur bat à 200, vous êtes dans un état second.")
+			print("\nVous acceptez « juste pour essayer ». Le codétenu vous glisse un petit morceau de cristal.")
+			print("Vous hésitez… puis vous le prenez. Quelques minutes plus tard, un rush violent vous traverse, des sensations fortes.")
+			print("Votre cœur bat à 200, vous êtes dans un état second.")
 			print("Mais quand l’effet retombe, un vide énorme vous frappe.")
    			input("\nAppuyez sur Entrée pour continuer...")
 			print("\nLe lendemain matin, le codétenu vient vous voir :")
@@ -106,7 +106,7 @@ elif int(reponse_1) == 2:
     		print(" 1) Reprendre une dose (vous en voulez vraiment).")
     		print(" 2) Refuser… mais vous n'avez pas de quoi payer la première dose.")
     		choix_drogue = input("Votre choix ? ")
-			if choix_drogue == "1":
+			if choix_drogue == 1 :
         		print("\nVous craquez. Vous en voulez encore. Vous tendez la main.")
         		print("Le codétenu sourit : « Je le savais. »")
        			print("Vous avalez la dose, mais cette fois votre corps ne tient pas.")
@@ -147,7 +147,7 @@ elif int(reponse_1) == 2:
     		print("1) Travailler pour nous. Vendre. Livrer. Fermer ta bouche.")
     		print("2) Disparaître sous une dalle de béton et ne plus jamais poser de problèmes.")
 			choix_final = input("Votre choix ? ")
-			if choix_final == "1":
+			if choix_final == 1 :
         		print("\nVous baissez les yeux. Vous savez que vous n’avez aucune autre issue.")
         		print("« D’accord... j’accepte. »")
         		print("L’homme sourit : « Bonne décision. On aime les gens intelligents. »")
