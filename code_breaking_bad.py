@@ -94,7 +94,7 @@ elif int(reponse_1) == 2:
 		print("Vous décidez de:\n 1) Acheter un peu de métamphétamine pour votre consommation personnelle, vous avez jamais testé et vous êtes curieux.\n 2) Vous acceptez son offre car vous n'avez plus rien, c'est votre seul moyen de faire de l'argent.\n 3) Vous le dénoncez au policier qui surveille votre cellule car vous savez que vous sortez avant lui")	
 		reponse_DEAL = input("Que choisissez-vous ?")
 		
-		if reponse_DEAL == 1 :
+		if int(reponse_DEAL) == 1 :
 			print("\nVous acceptez « juste pour essayer ». Le codétenu vous glisse un petit morceau de cristal.")
 			print("Vous hésitez… puis vous le prenez. Quelques minutes plus tard, un rush violent vous traverse, des sensations fortes.")
 			print("Votre cœur bat à 200, vous êtes dans un état second.")
@@ -106,7 +106,7 @@ elif int(reponse_1) == 2:
 			print(" 1) Reprendre une dose (vous en voulez vraiment).")
 			print(" 2) Refuser… mais vous n'avez pas de quoi payer la première dose.")
 			choix_drogue = input("Votre choix ? ")
-			if choix_drogue == 1 :
+			if int(choix_drogue) == 1 :
 				print("\nVous craquez. Vous en voulez encore. Vous tendez la main.")
 				print("Le codétenu sourit : « Je le savais. »")
 				print("Vous avalez la dose, mais cette fois votre corps ne tient pas.")
@@ -114,7 +114,7 @@ elif int(reponse_1) == 2:
 				print("Overdose. Vous ne vous relevez jamais.")
 				print("La consommation de stupéfiant est dangereuse pour votre santé ceci est un message du gouvernement.")
 				quit()
-			elif choix_drogue == 2 :
+			elif int(choix_drogue) == 2 :
 				print("\nVous refusez. « Non merci, hier c’était une erreur. »")
 				print("Le codétenu change soudain de visage « Ah ouais ? Donc tu consommes gratos maintenant ? Tu crois que je fais ça par charité ? »")
 				print("\nIl s’approche de vous, tout près :")
@@ -124,14 +124,14 @@ elif int(reponse_1) == 2:
 				print("\nVous êtes désormais forcé de dealer pour rembourser votre ‘dette’.")
 				print("Au même instant on vous annonce que vous êtes liberé c'est la fin de votre séjour en cellulle")
 		
-		elif reponse_DEAL == 2 :
+		elif int(reponse_DEAL) == 2 :
 			print("\nVous acceptez la proposition. Le codétenu hoche la tête : « Bienvenue dans l’entreprise. »")
 			print("Il vous glisse discrètement trois petits sachets dans la main, c'est de la metenphétamine.")
 			print("« Tu les écoules aujourd’hui. Prix simple : 500$ la dose. Tu prend 50% pour toi et le reste tu iras les données au big boss Tuco. »")
 			print("Vous venez officiellement d'entrer dans la famille. Et en sortir sera presque impossible.")
 			print("Au même instant on vous annonce que vous êtes liberé c'est la fin de votre séjour en cellulle")
 
-		elif reponse_DEAL == 3 :
+		elif int(reponse_DEAL) == 3 :
 			print("\nVous signalez discrètement le dealer au policier. En quelques secondes, il se fait attraper.")
 			print("Il vous fixe avec une intensité glaçante pendant qu’on l’emmène. Vous savez que ce regard n'annonce rien de bon.")
 			print("Les policiers vous félicitent : « Grâce à vous, on a attrapé un gros poisson. Vous êtes officiellement libre. »")
@@ -143,7 +143,7 @@ elif int(reponse_1) == 2:
 			print("1) Travailler pour nous. Vendre. Livrer. Fermer ta bouche.")
 			print("2) Disparaître sous une dalle de béton et ne plus jamais poser de problèmes.")
 			choix_final = input("Votre choix ? ")
-			if choix_final == 1 :
+			if int(choix_final) == 1 :
 				print("\nVous baissez les yeux. Vous savez que vous n’avez aucune autre issue.")
 				print("« D’accord... j’accepte. »")
 				print("L’homme sourit : « Bonne décision. On aime les gens intelligents. »")
@@ -151,7 +151,7 @@ elif int(reponse_1) == 2:
 				print("« Tu commences aujourd’hui. Si tu tentes de fuir… tu connais la suite. Vend tout ces sachet pour la fin de semaine et ramène le pognoin au big boss Tuco »")
 				print("Vous êtes libre… mais uniquement pour servir leur réseau.")
 		
-			elif choix_final == 2 :
+			elif int(choix_final) == 2 :
 				print("\nVous refusez catégoriquement de collaborerer.")
 				print("Il soupire, se relève, et fait un signe de tête.")
 				input("\nAppuyez sur Entrée pour continuer...")
