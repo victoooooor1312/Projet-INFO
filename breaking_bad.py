@@ -21,7 +21,7 @@ reponse_1 = input("Quel choix(sélectionnez le numéro) : ")
 if int(reponse_1) == 1:
 	print("Une fois au bar le moral n'est toujours pas au top vous enchaîner verres de bière et de wisky, votre collègue vous propse un plan pour se refaire aller au casino !")
 	print("Alors que l'alcool monte peit à petit vous décider :")
-	print("1)Refuser et continuer à boire pour oublier vos problèmes\n 2)Tenter votre au casino !")
+	print(" 1)Refuser et continuer à boire pour oublier vos problèmes\n 2)Tenter votre au casino !")
 	reponse_1_1 = input("Que choisissez-vous ? : ")
 
 	# Branche 1-1 Ivre
