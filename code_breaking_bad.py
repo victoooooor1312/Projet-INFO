@@ -30,7 +30,7 @@ if int(reponse_1) == 1:
 		if int(reponse_1_1_1) == 1:
 			print("\nVous sombrez dans l'alcool, vous perdez tout ce que vous avez dans l'unique objectif de pouvoir acheter une bouteille de plus. Chaque jour devient le même, une bouteille de vodka à la main en dormant sous un pont.")
 		elif int(reponse_1_1_1) == 2:
-			print("\nÀ cause de l'essor de l'intelligence artificielle, vous avez des difficultés à trouver un travail adapter à vos compétences, vous vous résignez et partez travailler à McDo.") 
+			print("\nÀ cause de l'essor de l'intelligence artificielle, vous avez des difficultés à trouver un travail adapté à vos compétences, vous vous résignez et partez travailler à McDo.") 
 			print("Cela suffit à combler vos besoins, et sans ambitions, vous continuez votre vie ainsi jusqu'à la retraite, une vie simple en fin de compte.")
 			
 	# Branche 1-2 Casino
@@ -60,9 +60,24 @@ if int(reponse_1) == 1:
 				print(f"Vous avez perdu TOUTES vos économies vous ne disposez plus que de {money}$")
 				break 
 
-		# Branche principale
 		print("\nVous êtes dépité, viré du casino et n'avait plus un seul euros sur vous ! Un homme en capuche s'approche de vous et vous propose ce deal")
-		print("Je t'ai entendu parler dans le casino, je sais que t'as plus rien et que tu t'y connais en informatique. Je te propose un nouveau travail, où tu gagneras en un mois ce que t'aurais gagné en une vie. J'étais comme toi y'a plusiseurs années, maintenant je suis plein aux as... affaire à suivre :/")
+		print("Je t'ai entendu parler dans le casino, je sais que t'as plus rien et que tu t'y connais en informatique. Je te propose un nouveau job, où tu gagneras en un mois ce que t'aurais gagné en une vie. J'étais comme toi y'a plusiseurs années, maintenant je suis plein aux as...")
+		print("Que lui répondez vous ?")
+		print(" 1) <<Au point où j'en suis je n'ai plus rien à perdre dis moi en plus>> suis  \n 2) <<Non ça ira je ne suis pas intéressé>>")
+		décision = input("Votre choix : ")
+		if int(décision) == 1 :
+			print("\nVous acceptez sans réfléchir. L'homme vous emmène dans une voiture.")
+    		print("Il vous tend des sachets métanphétamine et sors un flingue en vous menaçant :")
+			print("<<Tiens, ta première mission, revend tous ça d'ici la fin de semaine et ramène le fric au big boss Tuco c'est le seul moyen de faire tes preuves dans notre cartel, après ça on en aura pas fini avec toi crois moi bien!") 
+			print("Trop tard pour reculer, vous n'avez pas d'autre choix que de dealer.")
+		elif int(décision) == 2 :
+			print("\nVous refusez et tentez de partir pour rentrer chez vous")
+			print("L'homme vous rattrappe aussitôt, sors un flingue, canon sur la tempe il vous dit :")
+			print("<< Je crois t'as pas bien compris petit merdeux ici c'est moi qui décide, et j'ai décidé que tu allé travailler pour moi, revend moi ces sachets de méthamphétamine d'ici la fin de semaine et ramène le fric au big boss Tuco>>")
+			print("Vous êtes dans une impasse pas d'autre choix que d'obéïr aux ordres")
+			
+		# Début dans le cartel
+		le_cartel()
 
 # Branche 2 manifestation
 elif int(reponse_1) == 2:
@@ -84,7 +99,7 @@ elif int(reponse_1) == 2:
 		print("La garde à vue prend fin après ces longues heures de pression.")
 		print("Malgré le fait que les policiers ont décidés d'abandonner la garde à vue, ils décident de vous faire passer un peu de temps en cellule avec des personnes très peu sympatiques, le temps de gérer la partie admistrative...")
 		print("\nUn de vos condétenu, un géorgien de 2m10 et 110kg de muscle avec un t-shirt et un short ufc, vous demande de lui passer vos chaussures car <<elles lui iraient très bien>>.")
-		print("Vous décidez de:\n 1)Vous tentez de le frapper le plus fort possible au visage, même si son menton semble plus solide que les barreaux de votre cellule.\n 2) Vous lui passez vos chaussures comme le bon toutou que vous êtes.")
+		print("Vous décidez de:\n 1) Vous tentez de le frapper le plus fort possible au visage, même si son menton semble plus solide que les barreaux de votre cellule.\n 2) Vous lui passez vos chaussures comme le bon toutou que vous êtes.")
 		(reponse_2_1) = input("Que choisissez-vous?")
 		if int(reponse_2_1) == 1:
 			print("\nVous vous faites mal à la main en essayant de le frapper, il finit par vous soulever et vous lancer sur le sol de la celulle. Il récupère vos chaussures pendant que vous pleurez par terre.")
@@ -159,12 +174,14 @@ elif int(reponse_1) == 2:
 				print("PANNN !!")
 				print("Vous êtes mort")
 				quit()
-		
-		print("La suite arrive ...")
+				
+		# Début dans le cartel
+		le_cartel()
 
 
-
-
+# Fonction : Début dans le cartel
+def le_cartel():
+	print("C'est le début de votre aventure dans le monde du narcotrafique")
 
 
 	
