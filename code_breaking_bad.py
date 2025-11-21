@@ -1,7 +1,7 @@
 import random
 import time 
 
-money = 30000
+money = 3000000
 pv = 100
 blue_crystal = 0
 
