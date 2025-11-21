@@ -1,4 +1,5 @@
 import random
+import time 
 
 money = 30000
 pv = 100
@@ -95,9 +96,11 @@ elif int(reponse_1) == 2:
 		print("Vous êtes placé en garde à vue. Chaque journée semble interminable.\n")
 		jour = 1
 		nb_jours = 3   # durée de la garde à vue
+		duree = 1 
 		while jour <= nb_jours:
-			input(f"Appuyez sur Entrée pour passer au jour {jour}...")
+			time.sleep(duree)
 			print(f"\n📅 Jour {jour} de garde à vue")
+			time.sleep(duree)
 			print("Les policiers pensent que vous cachez encore quelque chose.")
 			print("Ils vous interrogent toute la journée...\n")
 			jour = jour + 1
@@ -143,7 +146,7 @@ elif int(reponse_1) == 2:
 				print("« Tu vas rembourser. Et tu vas rembourser en travaillant pour moi. »")
 				print("Il vous met dans la main un petit sachet : « Tu vas le refourguer discret. Si tu refuses… »")
 				print("« Quand tu sortiras dehors on te retrouvera et ton fera la peau si tu nous trahi. »")
-				print("\nVous êtes désormais forcé de dealer pour rembourser votre ‘dette’.")
+				print("\nVous êtes désormais forcé dimport time e dealer pour rembourser votre ‘dette’.")
 				print("Au même instant on vous annonce que vous êtes liberé c'est la fin de votre séjour en cellulle")
 		
 		elif int(reponse_DEAL) == 2 :
