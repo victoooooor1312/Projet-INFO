@@ -12,11 +12,11 @@ def la_quête_du_crackhead(sachets):
 	print("Ils te demandent ce que tu viens faire ici.")
 	print("Au vu de leur apparence et de leurs bouteilles en main, tu prends peur et part en courant en disant que tu t'es trompé d'adresse.")
 	print("Tu repenses à l'argent que tu dois faire, tu choisis donc de:")
-	print("1) Tu retournes les voir en leur proposant d'acheter ta marchandise.")
-	print("2) Tu penses vraiment que c'est une mauvaise idée de dealer directement avec eux et tu repars d'où tu  viens.")
-	réponse_crackhead = input ("Que fais-tu?")
+	print(" 1)Tu retournes les voir en leur proposant d'acheter ta marchandise.")
+	print(" 2)Tu penses vraiment que c'est une mauvaise idée de dealer directement avec eux et tu repars d'où tu  viens.")
+	réponse_crackhead = input ("🔹 Que fais-tu?")
 	if int(réponse_crackhead) == 1:
-		print(" Ils semblent être partant pour t'en acheter au début, mais l'un d'entre eux dit aux autres qu'ils ont juste à te voler.")
+		print("\nIls semblent être partant pour t'en acheter au début, mais l'un d'entre eux dit aux autres qu'ils ont juste à te voler.")
 		print("Tu t'enfuies le plus vite possible, mais tu te retrouvent coincés dans un cul-de-sac.")
 		print("Ils te laissent le choix entre leur donner gentiment 3 sachets ou te les faire voler de force, après quoi tu leur donnes sans hésiter les sachets.")
 		sachets = sachets-3
@@ -34,18 +34,12 @@ def mission_dealeur_1():
 		print("2) Aller voir le distributeur local dont on t'a donné l'adresse.")
 		print("3) Tu vas en boîte de nuit pour vendre")
 		print("4) Tu missiones une de tes lointaine connaissance d'aller vendre pour toi car il s'y connaît mieux que toi, en lui promettant qu'il touchera sa part")
-		deal1 = input("Comment vend tu ta drogue?")
+		deal1 = input("🔹 Comment vend tu ta drogue?")
 		if int(deal1) == 1:
-			la_quête_du_crackhead()
-		elif int(deal1) == 2:
+			la_quête_du_crackhead(sachets)
+			sachets = la_quête_du_crackhead(sachets)
+		
 			
-		elif int(deal1) == 3 :
-			
-		elif int(deal1) == 4:
-			
-
-
-
 # Fonction : Début dans le cartel
 def le_cartel():
 	input("\nAppuyez sur Entrée pour commencez à dealer...")
@@ -56,20 +50,21 @@ def le_cartel():
 	
 	
 # Introduction
-print("Vous êtes Walter Black, un professeur d'informatique de lycée. En vous réveillant, vous checker vos mails et apprenait que la direction vous a viré car votre métier se fait remplacer par une intelligence artificielle")
+print("Vous êtes Walter Black, un professeur d'informatique de lycée.👨‍💻")
+print("En vous réveillant, vous checker vos mails et apprenait que la direction vous a viré car votre métier se fait remplacer par une intelligence artificielle")
 print("Cette nouvelle vous attriste car ces derniers temps, vous avez quelques soucis financiers... ")
 # Premier choix
 print("Pendant que vous déprimé votre collègue vous appel car il a reçu le même mail.")
 print("Face à la situation vous décidez :" )
 print(" 1)De sortir boire un coup au bar pour vous changer les idées\n 2)D'aller manifester devant le lycée avec d'autres enseignants dans votre cas ")
-reponse_1 = input("Quel choix(sélectionnez le numéro) : ")
+reponse_1 = input("🔹 Quel choix(sélectionnez le numéro) : ")
 
 # Branche 1
 if int(reponse_1) == 1:
 	print("\nUne fois au bar le moral n'est toujours pas au top vous enchaînez verres de bière et de whisky, votre collègue vous propose un plan pour se refaire aller au casino !") 
 	print("Alors que l'alcool monte petit à petit vous décidez :" )
 	print(" 1)Refuser et continuer à boire pour oublier vos problèmes\n 2)Aller tenter votre chance au casino !")
-	reponse_1_1 = input("Que choisissez-vous ? : ")
+	reponse_1_1 = input("🔹 Que choisissez-vous ? : ")
 	
 	# Branche Ivre
 	if int(reponse_1_1) == 1:
@@ -77,7 +72,7 @@ if int(reponse_1) == 1:
 		print("Sans grande surprise, il vous bat et vous rentrez chez vous. Votre femme vous découvre complètement ivre, et sachant que vous n'avez plus de travail, elle décide de vous quitter et de vous virer de la maison qu'elle possède.")
 		print("Face à la situation vous décidez :")
 		print(" 1)Vous décidez de resortir boire comme hier soir car vous en pouvez plus de votre situation\n 2)Vous décidez de reprendre votre vie en main et d'aller trouver un emploie chez pôle emploie.")
-		reponse_1_1_1 = input("Quel est votre choix : ")
+		reponse_1_1_1 = input("🔹 Quel est votre choix : ")
 		if int(reponse_1_1_1) == 1:
 			print("\nVous sombrez dans l'alcool, vous perdez tout ce que vous avez dans l'unique objectif de pouvoir acheter une bouteille de plus. Chaque jour devient le même, une bouteille de vodka à la main en dormant sous un pont.")
 		elif int(reponse_1_1_1) == 2:
@@ -93,7 +88,7 @@ if int(reponse_1) == 1:
 		while tours < 5:
 			print(f"\nTour {tours+1} — Mise actuelle : {money}$")
 			print("Vous choisissez de mettre tout votre argent sur le :\n 1)Rouge\n 2)Noir.")
-			choix_casino = input ("Quel est votre choix?")
+			choix_casino = input ("🔹 Quel est votre choix?")
 			resultat = random.randint(1, 2)
 			
 			if int(choix_casino) == resultat:      # Victoire
@@ -117,7 +112,7 @@ if int(reponse_1) == 1:
 		print("Je t'ai entendu parler dans le casino, je sais que t'as plus rien et que tu t'y connais en informatique. Je te propose un nouveau job, où tu gagneras en un mois ce que t'aurais gagné en une vie. J'étais comme toi y'a plusiseurs années, maintenant je suis plein aux as...")
 		print("Que lui répondez vous ?")
 		print(" 1) <<Au point où j'en suis je n'ai plus rien à perdre dis moi en plus>>\n 2) <<Non ça ira je ne suis pas intéressé>>")
-		décision = input("Votre choix : ")
+		décision = input("🔹 Votre choix : ")
 		if int(décision) == 1 :
 			print("\nVous acceptez sans réfléchir. L'homme vous emmène dans une voiture.")
 			print("Il vous tend des sachets métanphétamine et sors un flingue en vous menaçant :")
@@ -137,7 +132,7 @@ elif int(reponse_1) == 2:
 	print("\nAvec d'autres professeurs vous organisez un blocus devant le lycée et des étudiants vous rejoignent pour manifester. ")
 	print("La manifestation dégénère rapidement, car de nombreux casseurs s'étaient infiltrés dans vos rangs et les CRS sont appelés. Ces derniers commence à gazer vos collègues. Révolté, vous décidez de:")
 	print(" 1) Sortir votre paff et leur courir dessus.\n 2) Tenter un 1v1 avec un CRS malgré le fait que vous soyez moins imposant qu'un moustique.\n 3) Dire à un CRS que sa soeur est belle (mauvaise idée).\n 4) Leur jeter dessus le plus gros pavé que vous trouvez.")
-	reponse_2 = input("Que choisissez-vous ?")
+	reponse_2 = input("🔹 Que choisissez-vous ?")
 	if int(reponse_2) in [1, 2, 3, 4]:
 		print("\nÉnerver un CRS n'était clairement pas une bonne idée...")
 		print("Vous êtes placé en garde à vue. Chaque journée semble interminable.\n")
@@ -152,16 +147,17 @@ elif int(reponse_1) == 2:
 			jour = jour + 1
 		print("La garde à vue prend fin après ces longues heures de pression.")
 		print("Malgré le fait que les policiers ont décidés d'abandonner la garde à vue, ils décident de vous faire passer un peu de temps en cellule avec des personnes très peu sympatiques, le temps de gérer la partie admistrative...")
+		time.sleep(duree_1)
 		print("\nUn de vos condétenu, un géorgien de 2m10 et 110kg de muscle avec un t-shirt et un short ufc, vous demande de lui passer vos chaussures car <<elles lui iraient très bien>>.")
-		print("Vous décidez de:\n 1) Vous tentez de le frapper le plus fort possible au visage, même si son menton semble plus solide que les barreaux de votre cellule.\n 2) Vous lui passez vos chaussures comme le bon toutou que vous êtes.")
-		(reponse_2_1) = input("Que choisissez-vous?")
+		print("Vous décidez de:\n 1) Le frapper le plus fort possible au visage, même si son menton semble plus solide que les barreaux de votre cellule.\n 2) Vous lui passez vos chaussures comme le bon toutou que vous êtes.")
+		(reponse_2_1) = input("🔹 Que choisissez-vous?")
 		if int(reponse_2_1) == 1:
 			print("\nVous vous faites mal à la main en essayant de le frapper, il finit par vous soulever et vous lancer sur le sol de la celulle. Il récupère vos chaussures pendant que vous pleurez par terre.")
 		elif int(reponse_2_1) == 2:
 			print("\nContent de sa nouvelle paire de chaussures, il décide de vous laisser tranquile pour le reste du temps.")
 		print("Un autre codétenu vous aborde, il vous explique qu'il est un dealer et il vous propose d'acheter ou de rentrer dans son réseau.")
 		print("Vous décidez de:\n 1) Acheter un peu de métamphétamine pour votre consommation personnelle, vous avez jamais testé et vous êtes curieux.\n 2) Vous acceptez son offre car vous n'avez plus rien, c'est votre seul moyen de faire de l'argent.\n 3) Vous le dénoncez au policier qui surveille votre cellule car vous savez que vous sortez avant lui")	
-		reponse_DEAL = input("Que choisissez-vous ?")
+		reponse_DEAL = input("🔹 Que choisissez-vous ?")
 		
 		if int(reponse_DEAL) == 1 :
 			print("\nVous acceptez « juste pour essayer ». Le codétenu vous glisse un petit morceau de cristal.")
@@ -174,7 +170,7 @@ elif int(reponse_1) == 2:
 			print("\nVous décidez de :")
 			print(" 1) Reprendre une dose (vous en voulez vraiment).")
 			print(" 2) Refuser… mais vous n'avez pas de quoi payer la première dose.")
-			choix_drogue = input("Votre choix ? ")
+			choix_drogue = input("🔹 Votre choix ? ")
 			
 			if int(choix_drogue) == 1 :
 				print("\nVous craquez. Vous en voulez encore. Vous tendez la main.")
@@ -216,7 +212,7 @@ elif int(reponse_1) == 2:
 			print("1) Travailler pour nous. Vendre. Livrer. Fermer ta bouche.")
 			print("2) Disparaître sous une dalle de béton et ne plus jamais poser de problèmes.")
 			time.sleep(duree_1)
-			choix_final = input("Votre choix ? ")
+			choix_final = input("🔹 Votre choix ? ")
 			
 			if int(choix_final) == 1 :
 				print("\nVous baissez les yeux. Vous savez que vous n’avez aucune autre issue.")
