@@ -6,6 +6,11 @@ pv = 100
 blue_crystal = 0
 duree_1 = 1 
 
+def parole(texte, delai):
+    for caractere in texte:
+        print(caractere, end='', flush=True)  
+        time.sleep(delai)
+    print()  # saut de ligne final après tout le texte
 
 def la_quête_du_crackhead(sachets):
 	print("\nTu es reçu par 6 fous du bus, chacun d'eux avec une bouteille de poliakov cassée en main.")
@@ -50,9 +55,9 @@ def le_cartel():
 	
 	
 # Introduction
-print("Vous êtes Walter Black, un professeur d'informatique de lycée.👨‍💻")
-print("En vous réveillant, vous checker vos mails et apprenait que la direction vous a viré car votre métier se fait remplacer par une intelligence artificielle")
-print("Cette nouvelle vous attriste car ces derniers temps, vous avez quelques soucis financiers... ")
+message = "\n💸A BREAKING BAD STORY💸\n\nVous êtes Walter Black, un professeur d'informatique de lycée.👨‍💻\nEn vous réveillant, vous checker vos mails et apprenait que la direction vous a viré car votre métier se fait remplacer par une intelligence artificielle.\nCette nouvelle vous attriste car ces derniers temps, vous avez quelques soucis financiers... "
+delai = 0.02
+parole(message, delai)
 # Premier choix
 print("Pendant que vous déprimé votre collègue vous appel car il a reçu le même mail.")
 print("Face à la situation vous décidez :" )
