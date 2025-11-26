@@ -121,7 +121,14 @@ def fuite(money):
 	print("1)Aller en direction de la voiture et espérer que les clés sont restés sur le contact")
 	print("2) Continuer de courir en espérant les perdre dans les ruelles voisines.")
 	choix_fuite = input("Comment vous échappez vous?")
-	if int(choix_fuite) = 1:
+	voiture = random.randit(1,2)
+	if int(choix_fuite) = 1 AND voiture == 1:
+		print("Gros coup de chance! Les clés sont encore là, tu t'empresses de démarrer pendant que les membres du gang sortent du batîment et commencent à te tirer dessus.")
+		print("Plusieurs balles touchent la voiture, mais pas de blessures pour toi ni de disfonctionnement pour la voiture.")
+		####éliminer tuco ####prochaine histoire
+	elif int(chois_fuite) = 1 and voiture == 2:
+		print("Lorsque tu te rends à la voiture, tu te rends compte que cette dernière est fermée.")
+		
 		
 
 
