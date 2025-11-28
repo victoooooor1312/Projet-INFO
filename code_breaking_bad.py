@@ -43,8 +43,7 @@ def fin_histoire():
 	exit()
 
 
-def sortie_GAV(money):
-	money = 0
+def sortie_GAV():
 	message = "📌 Une fois sortie de cellule après ces quelques jour passer en garde à vue, votre femme apprend ce que vous avez fait... \nElle vous quitte et vous vire de la maison qu'elle possède ! Vous n'avez plus du tout d'argent et êtes livrer à vous mêmes pour survivre ..." 
 	delai = 0.02
 	parole(message, delai)
@@ -335,7 +334,7 @@ def le_cartel():
 		money = faire_tomber_TUCO(money)
 	
 	
-def introduction(money):
+def introduction():
 	message = "\n💸A BREAKING BAD STORY💸\n\nVous êtes Walter Black, un professeur d'informatique au lycée.👨‍💻\nEn vous réveillant, vous checker vos mails et apprenait que la direction vous a viré car votre métier se fait remplacer par une intelligence artificielle.\nCette nouvelle vous attriste car ces derniers temps, vous avez quelques soucis financiers... "
 	delai = 0.005
 	parole(message, delai)
@@ -371,6 +370,7 @@ def introduction(money):
 			
 		# Branche Casino
 		elif int(reponse_1_1) == 2:
+			money = 30000
 			print("\nEt vous voilà arrivez au CASINO !🎰 ")
 			time.sleep(duree_1)
 			print(f"Vous disposez de {money}$, ce qui correspond à tout l'argent que vous avez de côté, y compris l'argent qui est censé rembourser vos prêts et payer les études de votre enfant. Vous décidez de tout mettre en un coup à la roulette.")
@@ -503,7 +503,7 @@ def introduction(money):
 					parole(message, délai)
 					print("\nVous êtes désormais forcé dimport time e dealer pour rembourser votre ‘dette’.")
 					print("Au même instant on vous annonce que vous êtes liberé c'est la fin de votre séjour en cellulle")
-					sortie_GAV(money)
+					sortie_GAV()
 
 		
 			elif int(reponse_DEAL) == 2 :
@@ -517,7 +517,7 @@ def introduction(money):
 				parole(message, délai)
 				print("Vous venez officiellement d'entrer dans la famille. Et en sortir sera presque impossible.")
 				print("Au même instant on vous annonce que vous êtes liberé c'est la fin de votre séjour en cellulle")
-				sortie_GAV(money)
+				sortie_GAV()
 
 		
 			elif int(reponse_DEAL) == 3 :
@@ -547,7 +547,7 @@ def introduction(money):
 					délai = 0.03
 					parole(message, délai)
 					print("\nVous êtes libre… mais uniquement pour servir leur réseau.")
-					sortie_GAV(money)
+					sortie_GAV()
 		
 				elif int(choix_final) == 2 :
 					print("\nVous refusez catégoriquement de collaborerer.")
