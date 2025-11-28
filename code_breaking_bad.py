@@ -335,7 +335,7 @@ def le_cartel():
 		money = faire_tomber_TUCO(money)
 	
 	
-def introduction():
+def introduction(money):
 	message = "\n💸A BREAKING BAD STORY💸\n\nVous êtes Walter Black, un professeur d'informatique au lycée.👨‍💻\nEn vous réveillant, vous checker vos mails et apprenait que la direction vous a viré car votre métier se fait remplacer par une intelligence artificielle.\nCette nouvelle vous attriste car ces derniers temps, vous avez quelques soucis financiers... "
 	delai = 0.005
 	parole(message, delai)
