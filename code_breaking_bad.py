@@ -8,7 +8,8 @@ duree_1 = 1
 duree_05 = 0.5
 
 choix0 = (0, 1, 2)  ### Racourci pas dans le vrai code ###
-choix2 = (1, 2)   
+choix2 = (1, 2)
+choix3 = (1, 2, 3)
 choix4 = (1, 2, 3, 4)
 
 def demander_choix(texte: str, rep_possibles: tuple):
@@ -317,7 +318,7 @@ elif int(reponse_1) == 2:
 		
 		print("Un autre codétenu vous aborde, il vous explique qu'il est un dealer et il vous propose d'acheter ou de rentrer dans son réseau.")
 		print("Vous décidez de:\n 1) Acheter un peu de métamphétamine pour votre consommation personnelle.\n 2) Vous acceptez son offre car vous n'avez plus rien, c'est votre seul moyen de faire de l'argent.\n 3) Vous le dénoncez au policier qui surveille votre cellule car vous savez que vous sortez avant lui")	
-		reponse_DEAL = demander_choix("🔹 Quel est votre choix?", choix2)
+		reponse_DEAL = demander_choix("🔹 Quel est votre choix?", choix3)
 		
 		if int(reponse_DEAL) == 1 :
 			print("\nVous acceptez « juste pour essayer ». Le codétenu vous glisse un petit morceau de cristal.")
