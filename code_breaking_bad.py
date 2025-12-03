@@ -159,7 +159,69 @@ def mission_dealeur_1(money):
 
 
 def faire_tomber_TUCO(money):
-	print("\n\n🤬Il faut faire tomber ce fdp de Tuco !")
+	print("\n\n🤬Il faut faire tomber ce fdp de Tuco !Il était temps de se débarrasser de Tuco")
+	print("Tu réfléchis à la meilleure façon de t’en débarrasser définitivement.\n")
+	time.sleep(1)
+	print("👉 Trois plans te viennent en tête :\n")
+	print(" 1) L'empoisonner discrètement (ricin ou équivalent)")
+	print(" 2) Fabriquer une bombe artisanale pour le piéger")
+	print(" 3) Monter un faux deal sous une fausse identité et lui faire tester de la meth empoisonnée\n")
+	choix = demander_choix("🔹 Comment veux-tu t’y prendre ? ", choix3)
+	if int(choix) == 1:
+		print("\nTu optes pour un poison discret. Tu achètes une dose de Ricin sur le darkweb pour 2000$ avec l'argent que tu disposes.")
+		money -= 2000
+		print("Il te reste à trouver comment la lui faire ingérer...")
+		print("\nTu as deux possibilités :")
+		print("1) Lui offrir un café 'pour discuter business'")
+		print("2) L'ajouter à son repas lors d'un rendez-vous professionnel")
+		choix = demander_choix("🔹 Que fais-tu ? ", choix2)
+		if int(choix) == 1:
+			print("Tuco accepte de discuter business à ta grande surprise. Tu lui verse ton poison quand il a le dos tourné.Le poison agit lentement... Tuco s'effondre. Il est mort.")
+			print("Tu n'as plus d'ennemi !")
+    
+		elif int(choix) == 2:
+			print("Tu verse du poison dans son repas. Tuco crache le contenu immédiatement, te regardant avec des yeux de tueur.")
+			print("Il te saute dessus et te tue d'une balle dans a tête sans hésiter.")
+			fin_histoire()
+	
+	if int(choix) == 2:
+		print("\n💣 Tu décides de fabriquer une bombe artisanale en regardant un tuto sur Youtube.")
+		print("Tu prépares un petit explosif que tu dois placer quelque part où Tuco passera.")
+		print("\nOù veux-tu le placer ?")
+		print("1) Sous son siège de voiture")
+		print("2) Dans son bureau, derrière la porte")
+		choix = demander_choix("🔹 Ton choix : ", choix2)
+		reussite = random.randint(1,2)
+		print("\nTu attends le moment critique...\n")
+		if reussite == 2 :
+			print("💥 Une énorme explosion retentit. Tuco n’a pas eu le temps de comprendre.")
+			print("☠️ Tu as réussi.")
+		else:
+			print("Tuco arrive plus tôt que prévu et te surprend en train de poser la bombe.")
+			print("Il te massacre sans réfléchir, tu es mort.")
+			fin_histoire()
+			
+	if int(choix) == 3:
+		print("\nTu décides de monter un faux deal.")
+		print("Tu inventes une identité de dealer et fixes un rendez-vous à Tuco.")
+		print("Ton but : lui faire tester une meth empoisonnée que tu as préparée.\n")
+		print("Où veux-tu organiser le deal ?")
+		print("1) Dans un parking souterrain")
+		print("2) Dans un motel abandonné")
+		choix = demander_choix("🔹 Ton hoix : ", choix2)
+		reussite = random.randint(1,4)
+		print("\nTuco arrive... Il veut goûter la marchandise...\n")
+		if reussite == 1:
+			print("Le jour du deal Tuco veux tester ta marchandise, mais te demander de gôuter toi d'abord")
+			print("Tu te retouve piéger car c'est du poison")
+			print("Il comprend le piège et sort son flingue et te tue sur place.")
+			fin_histoire()
+		else:
+			print("Le jour du deal Tuco veux tester ta marchandise")
+			print("💉 La meth empoisonnée fait son effet. Tuco devient livide, tombe au sol.")
+			print("☠️ Tu l’as eu. Tu prend vite la fuite pour éviter les représailles. C’est terminé pour lui.")
+	time.sleep(1)
+	print("Tuco est mort mainteant c'est toi le nouveau baron de la drogue du coin !")		
 	return money
 
 
@@ -334,8 +396,7 @@ def labo_de_TUCO(money):
 		print(f"\n  Ton argent total : {money}$ 💸")
 		print("  Le business continue pour l’instant ... 🚀")
 		time.sleep(1)
-	print("\n❗Tu réalises que Tuco t’arnaque et ne te respectera jamais, tu penses donc à le faire tomber")
-	money = faire_tomber_TUCO(money)
+	print("\nTu réalises que Tuco t’arnaque et ne te respectera jamais, tu penses donc à le faire tomber ❗")
 	
 
 def le_cartel():
