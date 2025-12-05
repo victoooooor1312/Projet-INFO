@@ -166,14 +166,18 @@ def intervention_GUS(money):
 	time.sleep(2)
 	parole("  « On m’a parlé de vous… un homme intelligent mais fauché. »", 0.02)
 	time.sleep(2)
-	parole("  « Je peux financer votre labo. En échange, je veux votre loyauté. »", 0.02)
+	parole("  « Je peux financer votre laboratoire. En échange, je veux votre loyauté. »", 0.02)
 	time.sleep(2)
 	print("\nQue fais-tu ?")
-	print("1) Accepter l’offre de Gus (il te donne 50 000$ mais tu lui DOIS tout)")
+	if money < 100000 :
+		argent_gus = 200000
+	else :
+		argent_gus = 100000
+	print(f"1) Accepter l’offre de Gus (il te donne {argent_gus} mais tu lui DOIS tout)")
 	print("2) Refuser (extrêmement dangereux…)")
-	choix = demander_choix("🔹 Ton choix : ", choix2)
 	if int(choix) == 1:
-		print("\nGustavo te félicite d'avoir accepter il finance entière la contruction d'un labo pour toi")
+		money = money + argent_gus   ######mettre sois 20000 pour la caravane sois 200000 pour le labo
+		print("\nGustavo te félicite d'avoir accepté, il finance entière la contruction d'un labo pour toi")
 		parole("Vous commencez demain 8h, RDV à Los Pollos Hermanos.", 0.02)
 		print(f"Argent total : {money}$")
 		parole("\n« Ne me décevez pas. »", 0.02)
@@ -191,7 +195,7 @@ def intervention_GUS(money):
 def baron_de_la_drogue(money):
 	input("\n>>>Appuies sur Entrée pour construire ton empire de la drogue⚔️\n")
 	print("Pour commencer, il te faut investir dans le matériel de chimie, les ingrédients mais surtout un lieu sûr pour cook.")
-	print(f"Tu dispose de {money}$ cela corespond à tout l'argent que tu as pu te faire avec la vente de drogue")
+	print(f"Tu disposes de {money}$ cela corespond à tout l'argent que tu as pu te faire avec la vente de drogue")
 	time.sleep(1)
 	print("\nOù veux-tu installer ton labo ?")
 	print("1) Dans un camping-car")
@@ -207,7 +211,7 @@ def baron_de_la_drogue(money):
 		print(f"\n❌ Tu n’as pas assez pour acheter un {lieu} ({prix}$ requis).")
 		return intervention_GUS(money)
 	else :
-		print("Bien maintenant il te fait du matos")
+		print("Bien maintenant il te faut du matos")
 		
 	return money
 
