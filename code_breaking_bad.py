@@ -77,10 +77,11 @@ def la_quête_du_crackhead(sachets, money):
 
 
 def distributeur_local(sachets, money):
-	print("\nPendant qu'on t'emmenait voir Tuco, un des membres du gang t'as présenté les traficants du coin, et tu t'es dis que tu pouvais ta chance avec l'un d'entre eux, crazy 7")
-	print("Tu arrives devant une grande villa avec deux garde du corps qui te font rentrer après avoir bien vérifié que tu n'avais pas d'arme sur toi.")
+	time.sleep(1)
+	print("\nEn rentrant dans le cartel on t'as parler des grands dealeur du coins en particulier CRAZY 7")
+	print("Tu te rends alors visite à CRAZY 7, deux garde du corps  te font rentrer après avoir bien vérifié que tu n'avais pas d'arme sur toi.")
 	print("Tu lui proposes d'acheter ta marchandise à 1500 euros le gramme, il te répond: ")
-	time.sleep(duree_1)
+	time.sleep(1)
 	message = " - Tu sais que le prix normal est bien plus bas que ça, t'as intérêt à baisser tes prix si tu veux repartir d'ici en un seul morceau."
 	délai = 0.03
 	parole(message, délai)
