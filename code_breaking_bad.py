@@ -682,7 +682,7 @@ def introduction(money):
 				print("\n Vous êtes dans une impasse pas d'autre choix que d'obéïr aux ordres")
 				time.sleep(1)
 
-			le_cartel() # Début dans le cartel
+			money = le_cartel(money) # Début dans le cartel
 
 	# Branche 2 Manifestation
 	elif int(reponse_1) == 2:
