@@ -166,7 +166,7 @@ def mission_dealeur_1(money):
 	return sachets, money
 
 
-def blue_crystal(money, blue_crystal):
+def synthèse_blue_crystal(money, blue_crystal):
 	purete = 50     # base
 	quantite = 5 # base
 	print("\n🔹 Étape 1 : Choix du réactif ")
@@ -224,14 +224,16 @@ def blue_crystal(money, blue_crystal):
 	print("\n=== RÉSULTAT  ===")
 	print(f" Quantité obtenue : {quantite}kg")
 	print(f" Pureté : {purete}%")
-	print(f"💰 Argent restant : {money}$")
-	print("\nTon lot de CRISTAL BLEU est prêt. Gus va s'en souvenir...")
+	print(f" Valeur estimé pour le revente")
+	print(f"💰 Argent total : {money}$")
+	print("\nTa METH est prête c'est du vrai cristal bleue une pure folie !")
 	blue_crystal += quantite
 	return money, blue_crystal
 
 def menu_principal(money, lieu, blue_crystal):
 	while True:
-		print("\n=== 📦 MENU DE TON EMPIRE ===")
+		print("\n===== 🔹 MENU 🔹 =====")
+		parole(f"💵 Argent : {money}$  | 🧪 METH : {blue_crystal}kg ", 0.01)
 		print("1) Cook de la METH")
 		print("2) Vendre ta production")
 		print("3) Acheter du matériel / armes")
@@ -240,21 +242,27 @@ def menu_principal(money, lieu, blue_crystal):
 		print("6) Quitter le jeu")
 		menu = demander_choix("🔹 Ton choix : ", choix6)
 		if int(menu) == 1:
-			money, blue_crystal = blue_crystal(money, blue_crystal)
+			money, blue_crystal = synthèse_blue_crystal(money, blue_crystal)
+			time.sleep(1)
+			input("\n>>>Appuie sur entrée pour retourner au menu...")
 		elif int(menu) == 2:
 			print("Fonction vente encore à coder.")
+			input("\n>>>Appuie sur entrée pour retourner au menu...")
 		elif int(menu) == 3:
 			print("Boutique pas encore disponible.")
+			input("\n>>>Appuie sur entrée pour retourner au menu...")
 		elif int(menu) == 4:
 			print("Missions en travaux.")
+			input("\n>>>Appuie sur entrée pour retourner au menu...")
 		elif int(menu) == 5:
 			print(f"\n💼 Stock actuel : {blue_crystal}kg")
 			print(f"💰 Argent : {money}$")
+			input("\n>>>Appuie sur entrée pour retourner au menu...")
 		elif int(menu) == 6:
 			print("Tu quittes ton empire...")
 			fin_histoire()
 		
-		return money, lieu, blue_crystal
+	return money, lieu, blue_crystal
 
 
 def intervention_GUS(money, prix, lieu, name):
@@ -361,10 +369,10 @@ def baron_de_la_drogue(money):
 	print("En tant que baron de la drogue il ta faut absolument un nom de narcotrafiquant")
 	name = input("🔹 Quel nom veut tu porter à la place de Walter Black : ")
 	parole(f"À présent les gens t'appelerons {name} 🥶", 0.02)
-	time.sleep(1)
+	time.sleep(0.5)
 	print("\nPour commencer, il te faut investir dans un labo, un lieu sûr pour cook.")
 	print(f"Tu disposes de {money}$ cela corespond à tout l'argent que tu as pu te faire avec la vente de drogue")
-	time.sleep(1)
+	time.sleep(0.5)
 	print("\nOù veux-tu installer ton labo ?")
 	print("1) Dans un camping-car (20 000$)")
 	print("2) Dans un entrepôt abandonné (150 000$)")
@@ -385,21 +393,26 @@ def baron_de_la_drogue(money):
 		money, prix, lieu = intervention_GUS(money, prix, lieu, name)
 		
 	print("\n-----------------------------------------\n")
-	print("\nGus revient te voir quelques jours plus tard.")
-	time.sleep(1)
-	parole(f"  « {name}… Le matériel est en place. Ton {lieu} est prêt pour commencer à produire de la METH. »", 0.03)
+	print("Gus revient te voir quelques jours plus tard.")
+	time.sleep(0.5)
+	parole(f"  « {name}… Le matériel est en place. Ton {lieu} est prêt pour commencer à produire de la METH. »", 0.02)
 	time.sleep(1)
 	print(f"\nTu te rends dans ton {lieu}. À l’intérieur :")
-	time.sleep(0.75)
+	time.sleep(0.5)
 	print("• Matériel flambant neuf 🧪")
-	time.sleep(0.75)
-	print("• Hotte filtrante de labo 💨")
-	time.sleep(0.75)
-	print("• Barils de méthylamine bleutée… 🛢️")
-	time.sleep(1.5)
+	time.sleep(0.5)
+	print("• Barils de Méthylamine, Phénylacétone, Pseudoéphédrine… 🛢️")
+	time.sleep(1)
 	print("\nTu enfiles ta combinaison jaune. Le moment est venu de cook.")
-	input(">>> Appuie sur Entrée pour commencer la première production...")
+	input(">>> Appuie sur Entrée pour commencer ta première synthèse...")
 	blue_crystal = 0
+	money, blue_crystal = synthèse_blue_crystal(money, blue_crystal)
+	time.sleep(1)
+	print("\nGus observe le cristal bleu que tu viens de prodire avec un léger sourire.")
+	parole("  — Impressionnant. Pour une première production, c’est remarquable. Continuez ainsi je compte sur vous pour batir un empire de la drogue.", 0.02)
+	parole("  - La pureté de ton produit est remarquable, je m'engage à être ton revendeur", 0.02)
+	time.sleep(0.5)
+	input("\n>>>À présent tu gère toi mêmes ton business Appuie sur Entrée pour accèder au menu de ton business...")
 	money, lieu, blue_crystal = menu_principal(money, lieu, blue_crystal)
 
 	return money
