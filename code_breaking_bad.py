@@ -7,7 +7,7 @@ choix0 = (0, 1, 2)  ### Racourci pas dans le vrai code ###
 choix2 = (1, 2)
 choix3 = (1, 2, 3)
 choix4 = (1, 2, 3, 4)
-menu = (1, 2, 3, 4, 5, 6)
+choix6 = (1, 2, 3, 4, 5, 6)
 
 # Toutes les fonctions #
 
@@ -167,65 +167,67 @@ def mission_dealeur_1(money):
 
 
 def blue_crystal(money, blue_crystal):
-    purete = 50     # base
-    quantite = 5 # base
-    print("\n🔹 Étape 1 : Choix de l’éphédrine")
-    print("1) Pseudoéphédrine industrielle (bon marché)")
-    print("2) Phénylacétone pharmaceutique (qualité ++)")
-    print("3) Méthylamine pure (la spéciale de Walter)")
-
-    choix = demander_choix(" 🔹Ton choix : ", choix3)
-	cout = 5000
+	purete = 50     # base
+	quantite = 5 # base
+	print("\n🔹 Étape 1 : Choix du réactif ")
+	print("1) Pseudoéphédrine industrielle (500$)")
+	print("2) Phénylacétone pharmaceutique (2000$)")
+	print("3) Méthylamine pure (10 000$)")
+	choix = demander_choix(" 🔹Ton choix : ", choix3)
+	if int(choix) == 1:
+		cout = 500
+	if int(choix) == 2:
+		cout = 2000
+	if int(choix) == 3:
+		cout = 10000
 	if money < cout:
-        print("\n❌ Tu n'as pas assez d'argent pour les ingrédients !")
-        return money, 0
-    money -= cout
-
-    if int(choix) == 1:
-        purete += 5
-        quantite += 50
-    elif int(choix) == 2:
-        purete += 15
-        quantite += 30
-    elif int(choix) == 3:
-        purete += 30
-        quantite += 80
+		print("\n❌ Tu n'as pas assez d'argent pour ces ingrédients ! Choisis autre chose")
+		return money, 0
+	money -= cout
+	if int(choix) == 1:
+		purete += 5
+		quantite += 50
+	elif int(choix) == 2:
+		purete += 15
+		quantite += 30
+	elif int(choix) == 3:
+		purete += 30
+		quantite += 80
     # --- ÉTAPE 2 : Mode de chauffage ---
-    print("\n🔹 Étape 2 : Mode de chauffage")
-    print("1) Chauffage rapide (volume +, pureté -)")
-    print("2) Chauffage lent et contrôlé (pureté +++)")
-    print("3) Chauffage normal")
-
-    choix = demander_choix("🔹 Ton choix : ", choix3)
-    if int(choix) =="1":
-        purete -= 10
-        quantite += 60
-    elif int(choix) =="2":
-        purete += 25
-        quantite -= 10
-    elif int(choix) == "3":
-        purete += 10
-    # --- ÉtAPE 3 : Technique de cristallisation ---
-    print("\n🔹 Étape 3 : Cristallisation")
-    print("1) Cristallisation simple (classique)")
-    print("2) Cristallisation sous vide (pureté +)")
-    print("3) Cristallisation ultra lente (pureté +++, quantité -)")
+	print("\n🔹 Étape 2 : Mode de chauffage")
+	print("1) Chauffage rapide (volume +, pureté -)")
+	print("2) Chauffage lent et contrôlé (pureté +++)")
+	print("3) Chauffage normal")
 	choix = demander_choix("🔹 Ton choix : ", choix3)
-    if int(choix) == 1:
-        purete += 10
-    elif int(choix) == 2:
-        purete += 20
-    elif int(choix) == 3:
-        purete += 35
-        quantite -= 30
+	if int(choix) =="1":
+		purete -= 10
+		quantite += 60
+	elif int(choix) =="2":
+		purete += 25
+		quantite -= 10
+	elif int(choix) == "3":
+		purete += 10
+    # --- ÉtAPE 3 : Technique de cristallisation ---
+	print("\n🔹 Étape 3 : Cristallisation")
+	print("1) Cristallisation simple (classique)")
+	print("2) Cristallisation sous vide (pureté +)")
+	print("3) Cristallisation ultra lente (pureté +++, quantité -)")
+	choix = demander_choix("🔹 Ton choix : ", choix3)
+	if int(choix) == 1:
+		purete += 10
+	elif int(choix) == 2:
+		purete += 20
+	elif int(choix) == 3:
+		purete += 35
+		quantite -= 30
     # Résultat final
-    print("\n=== RÉSULTAT  ===")
-    print(f" Quantité obtenue : {quantite}kg")
-    print(f" Pureté : {purete}%")
-    print(f"💰 Argent restant : {money}$")
-    print("\nTon lot de CRISTAL BLEU est prêt. Gus va s'en souvenir...")
-
-    return money, quantite
+	print("\n=== RÉSULTAT  ===")
+	print(f" Quantité obtenue : {quantite}kg")
+	print(f" Pureté : {purete}%")
+	print(f"💰 Argent restant : {money}$")
+	print("\nTon lot de CRISTAL BLEU est prêt. Gus va s'en souvenir...")
+	blue_crystal += quantite
+	return money, blue_crystal
 
 def menu_principal(money, lieu, blue_crystal):
 	while True:
@@ -236,23 +238,23 @@ def menu_principal(money, lieu, blue_crystal):
 		print("4) Partir en mission")
 		print("5) Voir ton stock")
 		print("6) Quitter le jeu")
-		menu = demander_choix("🔹 Ton choix : ", menu)
-		if int(menu) == "1":
+		menu = demander_choix("🔹 Ton choix : ", choix6)
+		if int(menu) == 1:
 			money, blue_crystal = blue_crystal(money, blue_crystal)
-		elif int(menu)) == "2":
+		elif int(menu) == 2:
 			print("Fonction vente encore à coder.")
-		elif int(menu) == "3":
+		elif int(menu) == 3:
 			print("Boutique pas encore disponible.")
-		elif int(menu) == "4":
+		elif int(menu) == 4:
 			print("Missions en travaux.")
-		elif int(menu) == "5":
+		elif int(menu) == 5:
 			print(f"\n💼 Stock actuel : {blue_crystal}kg")
 			print(f"💰 Argent : {money}$")
-        elif int(menu) == "6":
-            print("Tu quittes ton empire...")
-            fin_histoire()
-    
-    return money, lieu, blue_crystal
+		elif int(menu) == 6:
+			print("Tu quittes ton empire...")
+			fin_histoire()
+		
+		return money, lieu, blue_crystal
 
 
 def intervention_GUS(money, prix, lieu, name):
@@ -366,7 +368,7 @@ def baron_de_la_drogue(money):
 	print("\nOù veux-tu installer ton labo ?")
 	print("1) Dans un camping-car (20 000$)")
 	print("2) Dans un entrepôt abandonné (150 000$)")
-	choix = demander_choix("🔹 Ton choix : ", choix3)
+	choix = demander_choix("🔹 Ton choix : ", choix2)
 	if int(choix) == 1:
 		prix = 20000
 		lieu = "camping-car"
@@ -376,6 +378,8 @@ def baron_de_la_drogue(money):
 	if money < prix:
 		print(f"\n❌ Tu n’as pas assez pour acheter un {lieu} ({prix}$ requis).")
 		money, prix, lieu = intervention_GUS(money, prix, lieu, name)
+	elif money == 1000000: # PAS DANS LE CODE RACOURCIIIII
+		time.sleep(0.3)
 	else :
 		print("Tu te reinseigne")
 		money, prix, lieu = intervention_GUS(money, prix, lieu, name)
@@ -395,8 +399,8 @@ def baron_de_la_drogue(money):
 	time.sleep(1.5)
 	print("\nTu enfiles ta combinaison jaune. Le moment est venu de cook.")
 	input(">>> Appuie sur Entrée pour commencer la première production...")
-	
-	money, blue_crystal = menu_principal(money, blue_crystal)
+	blue_crystal = 0
+	money, lieu, blue_crystal = menu_principal(money, lieu, blue_crystal)
 
 	return money
 
@@ -819,7 +823,6 @@ def introduction(money):
 			(reponse_2_1) = demander_choix("🔹 Quel est votre choix?", choix2)
 			if int(reponse_2_1) == 1:
 				print("\nVous vous faites mal à la main en essayant de le frapper, il finit par vous soulever et vous lancer sur le sol de la celulle.\nIl récupère vos chaussures pendant que vous pleurez par terre.")
-			time.sleep(2)
 			elif int(reponse_2_1) == 2:
 				print("\nContent de sa nouvelle paire de chaussures, il décide de vous laisser tranquile pour le reste du temps.")
 			time.sleep(2)
