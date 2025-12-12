@@ -329,7 +329,7 @@ def acheter(money, inv):
 		print(f"👮 Informateur police : {'Oui' if inv['informateur'] else 'Non'}")
 		print("\nQue veux-tu acheter ?")
 		print("1) Une arme (35 000$)  - Max 10")
-		print("2) Un homme de main (250 000$) - Max 5")
+		print("2) Un homme de main (100 000$) - Max 5")
 		print("3) Avocat Saul Goodman (500 000$) - Unique")
 		print("4) Informateur dans la police (750 000$) - Unique")
         print("5) Retour au menu")
@@ -350,11 +350,11 @@ def acheter(money, inv):
             if inv["hommes"] >= 5:
                 print("\n❌ Tu as déjà le maximum d’hommes (5).")
 
-            if money < 250000:
+            if money < 100000:
                 print("\n❌ Pas assez de cash.")
 			
-			elif money >= 250000:
-				money -= 250000
+			elif money >= 100000:
+				money -= 100000
 				inv["hommes"] += 1
 				print("\n🧍 Tu recrutes un homme de main.")
 
