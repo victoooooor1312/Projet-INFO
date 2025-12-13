@@ -315,7 +315,7 @@ def synthèse_blue_crystal(money, blue_crystal, purete, quantite):
 		parole("🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦", 1.5)
 		parole("Votre métamphétamine est prête ! ✅", 0.01)
 		purete += 33
-		quantite += 7
+		quantite += 2
 	valeur = purete*quantite*100
     # Résultat final
 	time.sleep(1)
@@ -338,7 +338,7 @@ def acheter(money, inv):
 		print("2) Un homme de main (100 000$) - Max 5")
 		print("3) Avocat Saul Goodman (500 000$) - Unique")
 		print("4) Informateur dans la police (750 000$) - Unique")
-		print("6) Retour au menu")
+		print("5) Retour au menu")
 		choix = demander_choix("🔹 Ton choix : ", choix5)
 		if int(choix) == 1:
 			if inv["armes"] >= 10:
@@ -474,16 +474,50 @@ def mission_finale(money, inv):
 				input("\n>>>Appuie sur entrée pour retourner au menu...")
 
 		elif int(choix) == 2:
-			print("\n💼 Tu veux blanchir une partie de ton argent sale.")
-			print("💬 Plus tu blanchis, plus tu payes en 'frais' (perte).")
-			input("\n>>>Appuie sur entrée pour retourner au menu...")
-		
+			print("\nTu veux blanchir ton argent sale sans te faire choper")
+			print("Mais chaque option a ses risques.")
+			print("\nOptions possible :")
+			print("1) Los Pollos Hermanos 🐔")
+			print("2) Une laverie 🧼")
+			print("3) Un car wash 🚗")
+			choix_blanchiment = demander_choix("🔹 Ton choix : ", choix3)
+			if not inv["informateur"] or not inv["avocat"]:
+				print("Mauvaise idée sans aucun contact et aucune expérience dans le millieu tu te chopes un contrôle fiscale")
+				time.sleep(1)
+				print("Tu es démasqué et on t'arrête pour trafic de stupéfiants")
+				time.sleep(1)
+				print("\n⛓️ Tu pars en prison")
+				fin_histoire()
+			elif inv["informateur"] and inv["avocat"]:
+				cout = 150000
+				parole(f"💸 Investissement initial : {cout}$", 0.01)
+				time.sleep(0.5)
+				print("\nTu t’adosses à une nouvelle entrprise pour blanchir ton argent")
+				time.sleep(1)
+				print("Grace à l'aide de ton avocat Saul Good Man il s'arrange pour que la comptabilité soit gérer parfaitement")
+				time.sleep(1)
+				print("Avec ton informateur dans la police que tu as payé tu es assuré que personne ne vienne se mêler de ton business, il t’évite tout contrôle fédéral")
+				time.sleep(0.5)
+				print("Flux d’argent énorme. Comptabilité béton.")
+				time.sleep(0.5)
+				parole(f"\n✅ Blanchiment ultra-efficace en 1 an tu parviens à te faire {cout}$ d'argent propre !.", 0.01)
+				time.sleep(0.5)
+				parole("Tu es intouchable jusqu'a la fin de ta vie ! Bien joué ! ", 0.01)
+				fin_histoire()
+
 		elif int(choix) == 3:
 			print("\n🔫 Tu veux déclarer la guerre aux Salamanca…")
 			print("⚠️ C’est suicidaire sans préparation.")
 			print("👉 Minimum conseillé : 3 hommes + 3 armes + pas mal de contact")
 			if inv["hommes de mains"] < 5 or inv["armes"] < 3:
 				print("\n❌ Tu n’as PAS les moyens pour une guerre frontale.")
+			elif inv["hommes de mains"] >= 5 or inv["armes"] >= 3:
+				confirm = demander_choix("\n🔹 Es-tu sûr de voiloir mener cette guerre ? (action iréversible) (1)oui/(2)non : ", choix2)
+				if int(confirm) == 1:
+					print("\nMal joué t'as aucune chance, tout le monde meurt")
+					fin_histoire()
+				elif int(confirm) == 2:
+					print("\nT'as raison c'est pas une bonne idée")
 			input("\n>>>Appuie sur entrée pour retourner au menu...")
 		
 		elif int(choix) == 4:
@@ -1040,7 +1074,6 @@ def introduction(money):
 	parole("\nPendant que vous déprimé votre collègue vous appel car il a reçu le même mail\nFace à la situation vous décidez :\n 1)De sortir boire un coup au bar pour vous changer les idées\n 2)D'aller manifester devant le lycée avec d'autres enseignants dans votre cas ", 0.001)
 	reponse_1 = demander_choix("🔹 Quel est ton choix(sélectionnez le numéro) : ", choix0)
 
-	# Branche 1
 	if int(reponse_1) == 1:
 		print("\nUne fois au bar le moral n'est toujours pas au top vous enchaînez verres de bière et de whisky, votre collègue vous propose un plan pour se refaire aller au casino !") 
 		time.sleep(1)
@@ -1048,8 +1081,7 @@ def introduction(money):
 		print(" 1) Refuser et continuer à boire pour oublier vos problèmes\n 2) Aller tenter votre chance au casino !")
 		reponse_1_1 = demander_choix("🔹 Que choisissez-vous ? : ", choix2)
 	
-		# Branche Ivre
-		if int(reponse_1_1) == 1:
+		if int(reponse_1_1) == 1: # Branche Ivre
 			print("\nVous finissez complètement arraché, torse nu dans le bar, des élèves de votre lycée vous ont filmés vous faire sortir par le videur, avec lequel vous avez démmaré un combat.")
 			print("Sans grande surprise, il vous bat et vous rentrez chez vous. Votre femme vous découvre complètement ivre, et sachant que vous n'avez plus de travail, elle décide de vous quitter et de vous virer de la maison qu'elle possède.")
 			print("Face à la situation vous décidez :")
@@ -1063,9 +1095,8 @@ def introduction(money):
 				time.sleep(0.5)
 				parole("Cela suffit à combler vos besoins, et sans ambitions, vous continuez votre vie ainsi jusqu'à la retraite, une vie simple en fin de compte.", 0.005)
 				fin_histoire()
-			
-		# Branche Casino
-		elif int(reponse_1_1) == 2:
+
+		elif int(reponse_1_1) == 2: # Branche Casino
 			parole("\nEt vous voilà arrivez au CASINO !🎰 ", 0.01)
 			time.sleep(1)
 			print(f"Vous disposez de {money}$, ce qui correspond à tout l'argent que vous avez de côté, y compris l'argent qui est censé rembourser vos prêts et payer les études de votre enfant. Vous décidez de tout mettre en un coup à la roulette.")
@@ -1120,8 +1151,7 @@ def introduction(money):
 
 			money = le_cartel(money) # Début dans le cartel
 
-	# Branche 2 Manifestation
-	elif int(reponse_1) == 2:
+	elif int(reponse_1) == 2: 
 		print("\nAvec d'autres professeurs vous organisez un blocus devant le lycée et des étudiants vous rejoignent pour manifester. ")
 		time.sleep(0.75)
 		print("La manifestation dégénère rapidement, car de nombreux casseurs s'étaient infiltrés dans vos rangs et les CRS sont appelés. Ces derniers commence à gazer vos collègues. Révolté, vous décidez de:")
@@ -1205,7 +1235,6 @@ def introduction(money):
 					print("Au même instant on vous annonce que vous êtes liberé c'est la fin de votre séjour en cellulle")
 					money = sortie_GAV(money)
 
-		
 			elif int(reponse_DEAL) == 2 :
 				print("\nVous acceptez la proposition :")
 				parole(" - « Bienvenue dans l’entreprise. »", 0.03)
@@ -1252,8 +1281,6 @@ def introduction(money):
 					parole("PANNN !!", 0.03)
 					parole("Vous êtes mort 💀", 0.1)
 					fin_histoire()
-				
-			# Début dans le cartel
 			money = le_cartel(money)
 
 	if int(reponse_1) == 0: # Racourci si on a la flemme d'afficher tout le programe pour vérifier la suite 
@@ -1266,5 +1293,5 @@ def introduction(money):
 def jouer(money):
 	introduction(money)
 
-jouer(money) # Fin du code appel
+jouer(money)
 	
