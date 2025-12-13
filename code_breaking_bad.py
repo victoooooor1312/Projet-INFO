@@ -407,11 +407,13 @@ def mission_finale(money, inv):
 		choix = demander_choix("🔹 Ton choix : ", choix4)
 		
 		if int(choix) == 1:
-			print("\n Tu veux disparaître… changer d’identité… tout quitter et profiter de tout l'argent que tu as gagner.")
-			print(f"Actuellement tu as accumulé au total {money}$ mais tu peux encore décider de continuer à vendre pour gagner plus (fais un max d'oseille avant de partir  tu risuqes d'en avoir besoin pour disparaître)")
-			confirm = demander_choix("🔹 Es-tu sûr de voiloir te retirer du deal ? (action est iréversible) (1)oui/(2)non : ", choix2)
+			print("\nTu veux disparaître… changer d’identité… tout quitter et profiter de tout l'argent que tu as gagner.")
+			time.sleep(1)
+			print(f"Actuellement tu as accumulé au total {money}$ mais tu peux encore décider de continuer à vendre pour gagner plus\n(fais un max d'oseille avant de partir  tu risques d'en avoir besoin pour disparaître)")
+			confirm = demander_choix("\n🔹 Es-tu sûr de voiloir te retirer du deal ? (action iréversible) (1)oui/(2)non : ", choix2)
 			if int(confirm) == 1:
-				print("Ton histoire dans le monde de la meth s’arrête ici…")
+				print("\nTon histoire dans le monde de la meth s’arrête ici…")
+				time.sleep(1)
 				if inv["avocat"]:
 					print("Ton avocat sauras surement comment te sortir de là")
 					parole("\n📞 Appel de Saul Goodman...", 0.01)
@@ -435,40 +437,42 @@ def mission_finale(money, inv):
 						parole("\n  « C'est regretable mon amis, je ne peux pas t'aider autrement, c'est à toi de te débrouiller »", 0.02)
 				elif not inv["avocat"]:
 					parole("Malheuresement tu n'as aucun contact sur qui t'aider tu es seul (un avocat aurais pu t'aider à te faire disparâitre ...)", 0.01)
-					time.sleep(1)
-				print("\n Tu n’as plus le choix.🔥")
+				time.sleep(2)
+				print("\nTu n’as plus le choix.🔥")
+				time.sleep(0.5)
 				print("Tu dois brûler ton labo pour effacer toute trace.")
+				time.sleep(0.5)
 				print("Produits chimiques. Gaz. METHS. Matos. Une étincelle est tout explose…")
-				input("Appuies sur entrée pour tout faire pêter !")
-				parole("💥💥💥BOOOOM💥💥💥!!!!", 0.01)
-				print("Tout ton labo commence à partir en fumer")
+				time.sleep(0.5)
+				input("Appuies sur entrée pour tout faire pêter !🧨")
+				parole("💥💥💥BOOOOM💥💥💥!!!!", 0.05)
+				print("Tout ton labo part en fumer")
+				time.sleep(0.5)
 				print("Tu réalise au même moment que tes sacs de billets sont en train de partir en fumer c'est tout ton argent")
 				time.sleep(1)
 				if inv["informateur"]:
-					parole("Tu reçois un appel de ton informateur dans la police et tu lui explique la situation")
+					parole("Tu appel de ton informateur dans la police et tu lui explique la situation")
 					parole("\n  « La police est en chemin et sera la dans 5 min, je m'occupe d'effacer toute preuve pouvant t'inculper»", 0.02) 
 					parole("  « À présent fuit le plus loin possible »", 0.02)
 					parole("  « Pour ce qui est de ton argent laisse bruler, tu recevera ton dû en crypto sur un compte off-shore »", 0.02)
-					print("Tu prends la route avant l’arrivée des flics.")
-				
+					time.sleep(1)
+					print("Tu prends la route avant l’arrivée des flics et prends le premier avion.")
+					print(f"Tu as réussi ! Tu profites de tes {money}$ sous les tropiques !")
+					fin_histoire()
 				if not inv["informateur"]:
-                print("\n🚒 Le feu attire trop l’attention.")
-                print("Les voisins appellent les secours.")
-                print("La police arrive trop vite.")
-                print("Tu es arrêté sur les lieux.")
-                print("\n⛓️ Fin : La chute.")
-                fin_histoire()
-
-
-
-
-
-			
+					input("Appuies sur entrée pour te casser au plus vite ...")
+					print("\nLe feu attire trop l’attention.")
+					time.sleep(1)
+					print("La police arrive trop vite👮‍♂️")
+					time.sleep(0.5)
+					print("Tu es arrêté sur les lieux.")
+					time.sleep(0.5)
+					print("\n⛓️ Tu pars en prison")
+					fin_histoire()
 			elif int(confirm) == 2:
 				print("\nTu changes finalement d’avis… le business continue")
 				input("\n>>>Appuie sur entrée pour retourner au menu...")
 
-		
 		elif int(choix) == 2:
 			print("\n💼 Tu veux blanchir une partie de ton argent sale.")
 			print("💬 Plus tu blanchis, plus tu payes en 'frais' (perte).")
@@ -477,10 +481,9 @@ def mission_finale(money, inv):
 		elif int(choix) == 3:
 			print("\n🔫 Tu veux déclarer la guerre aux Salamanca…")
 			print("⚠️ C’est suicidaire sans préparation.")
-			print("👉 Minimum conseillé : 3 hommes + 3 armes + 200 000$")
-			if inv["hommes de mains"] < 5 or inv["armes"] < 3 or money < 200000:
+			print("👉 Minimum conseillé : 3 hommes + 3 armes + pas mal de contact")
+			if inv["hommes de mains"] < 5 or inv["armes"] < 3:
 				print("\n❌ Tu n’as PAS les moyens pour une guerre frontale.")
-				print("Reviens quand tu seras un vrai patron.")
 			input("\n>>>Appuie sur entrée pour retourner au menu...")
 		
 		elif int(choix) == 4:
