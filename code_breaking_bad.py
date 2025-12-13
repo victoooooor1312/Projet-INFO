@@ -10,8 +10,6 @@ choix4 = (1, 2, 3, 4)
 choix5 = (1, 2, 3, 4, 5)
 choix6 = (1, 2, 3, 4, 5, 6)
 
-# Toutes les fonctions #
-
 def demander_choix(texte: str, rep_possibles: tuple):
     while True:
         r = input(texte)
@@ -233,7 +231,7 @@ def vendre(money, blue_crystal, purete, quantite):
 				gain = 2_000_000
 				blue_crystal -= 200
 				money += gain
-				parole("\n🔥 THE BIG DEAL RÉUSSIE 🔥", 0.01)
+				parole("\nTHE BIG DEAL RÉUSSIE 🔥", 0.01)
 				print("Un acheteur fou te prend 200 kg d’un coup !")
 				print(f"💵 Tu touches {gain}$ en cash.")
 				time.sleep(1)
@@ -413,9 +411,55 @@ def mission_finale(money, inv):
 			print(f"Actuellement tu as accumulé au total {money}$ mais tu peux encore décider de continuer à vendre pour gagner plus (fais un max d'oseille avant de partir  tu risuqes d'en avoir besoin pour disparaître)")
 			confirm = demander_choix("🔹 Es-tu sûr de voiloir te retirer du deal ? (action est iréversible) (1)oui/(2)non : ", choix2)
 			if int(confirm) == 1:
-				print("\n🌅 Tu prends le large… Nouvelle identité. Nouveau pays.")
 				print("Ton histoire dans le monde de la meth s’arrête ici…")
-				fin_histoire()
+				if inv["avocat"]:
+					print("Ton avocat sauras surement comment te sortir de là")
+					parole("\n📞 Appel de Saul Goodman...", 0.01)
+					parole("  « J’ai peut-être quelqu’un… Un type qui fait disparaître les gens. C'est 500 000$  »", 0.02)
+					parole("  « Tout est pris en compte ton labo sera détruis, nouvel identité, transport nouvel vie ...»", 0.02)
+					parole("  « Qu'en dis tu ? »", 0.02)
+					choix = demander_choix("🔹 Accepter (1) ou Refuser (2) :", choix2)
+					if money >= 500000 and int(choix) == 1:
+						money -= 500000
+						print("\nTout est réglé.")
+						print("Nouveau nom. Nouvelle identité. Nouveau pays.")
+						time.sleep(0.5)
+						print(f"Tu profites du reste de ton argent $ à l'autre baut du monde")
+						time.sleep(0.5)
+						print("\nLa disparition parfaite🌅.")
+						fin_histoire()
+					elif money < 500000 and int(choix) == 1:
+						print("\nTu n'as pas assez d'argent pour payer tu dois disparaitre autrement")
+					elif int(choix) == 2:
+						parole("\n  « C'est regretable mon amis, je ne peux pas t'aider autrement, c'est à toi de te débrouiller »", 0.02)
+				elif not inv["avocat"]:
+					parole("Malheuresement tu n'as aucun contact sur qui t'aider tu es seul (un avocat aurais pu t'aider à te faire disparâitre ...)", 0.01)
+					time.sleep(1)
+				print("\n Tu n’as plus le choix.🔥")
+				print("Tu décides de brûler ton labo pour effacer toute trace.")
+				print("Produits chimiques. Gaz. Meths. Matos. Une étincelle est tout explose…")
+				
+				if money >= 50000:
+                print("\n💥 L’explosion est massive.")
+                print("Les preuves disparaissent.")
+                print("Tu prends la route avant l’arrivée des flics.")
+                print("Tu survis, mais tu perds une partie de ton argent.")
+                print("\n🌫️ Fin : Tu t’en sors, mais à quel prix ?")
+                fin_histoire()
+
+            else:
+                print("\n🚒 Le feu attire trop l’attention.")
+                print("Les voisins appellent les secours.")
+                print("La police arrive trop vite.")
+                print("Tu es arrêté sur les lieux.")
+                print("\n⛓️ Fin : La chute.")
+                fin_histoire()
+
+
+
+
+
+			
 			elif int(confirm) == 2:
 				print("\nTu changes finalement d’avis… le business continue")
 				input("\n>>>Appuie sur entrée pour retourner au menu...")
