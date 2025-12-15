@@ -1186,7 +1186,7 @@ def introduction(money):
 			print("La garde à vue prend fin après ces longues heures de pression.")
 			print("Malgré le fait que les policiers ont décidés d'abandonner la garde à vue, ils décident de vous faire passer un peu de temps en cellule avec des personnes très peu sympatiques, le temps de gérer la partie admistrative...")
 			time.sleep(2)
-			print("\nUn de vos condétenus, un géorgien de 2m10 et 110kg de muscle avec un t-shirt et un short ufc, vous demande de lui passer vos chaussures car "elles lui iraient très bien\".")
+			print("\nUn de vos condétenus, un géorgien de 2m10 et 110kg de muscle avec un t-shirt et un short ufc, vous demande de lui passer vos chaussures car elles lui iraient très bien.") 
 			print("Vous décidez de:\n 1) Le frapper le plus fort possible au visage, même si son menton semble plus solide que les barreaux de votre cellule.\n 2) Vous lui passez vos chaussures comme le bon toutou que vous êtes.")
 			(reponse_2_1) = demander_choix("🔹 Quel est votre choix?", choix2)
 			if int(reponse_2_1) == 1:
