@@ -523,19 +523,27 @@ def mission_finale(money, inv):
 					print("Tu réfléchis à plusieurs manières de les éliminer. Tu hésites entre:")
 					print("1)Leur proposer de se rencontrer dans un lieu isolé sous prétexte d'une potentielle collaboration et de les éliminer à l'aide d'un sniper.")
 					print("2)Envoyer tes hommes de mains au domicile des salamanca.")
-					print("3)")
-					confirm = demander_choix("\n 🔹Que choisis-tu?")
+					confirm = demander_choix("\n🔹 Que choisis-tu?", choix2)
 					if int(confirm) == 1 and not inv["informateur"]:
-						print("Tu prend contact avec Lalo Salamanca afin d'arranger un rendez-vous pour discuter business.\n Ce dernier trouve que c'est une bonne idée et accepte de te rencontrer accompagner du reste du cartel.")
+						print("\nTu prend contact avec Lalo Salamanca afin d'arranger un rendez-vous pour discuter business.\n Ce dernier trouve que c'est une bonne idée et accepte de te rencontrer accompagner du reste du cartel.")
 						print("Tu missiones l'un de tes hommes de se positionner au sommet d'une colline aux alentours, sur laquelle il aura une vue globale sur les environs.")
-						print("Une fois arrivé, tu discutes avec eux en attendant l'occasion parfaite d'en finir avec eux, lorsque tout d'un coup: BANG!!")
+						input("\nAppuie sur entrée pour continuer ...")
+						print("\nUne fois arrivé, tu discutes avec eux en attendant l'occasion parfaite d'en finir avec eux, lorsque tout d'un coup: ")
+						parole("BANG!!", 0.1)
 						print("Ce coup de feu te surprend car tu n'as pas donné l'ordre de tirer, et lorsque que tu regarde autour de toi, aucun des membres du cartel n'est blessé.")
 						print("Vous vous demandez ce qu'il se passe avec les membres du cartel lorsque vous entendez les sirènes de police retentir.")
-						print("Soudain, une voix retentit à l'aide d'un mégaphone: <<Vous êtes cernés! Ne cherchez pas à vous enfuir>>")
-						print("La DEA débarque et vous embarque tous. Vous finissez votre vie sous les barreaux, ce qu'un informateur aurait pu vous éviter")
-						fin histoire
+						print("Soudain, une voix retentit à l'aide d'un mégaphone:")
+						paorle("   <<Vous êtes cernés! Ne cherchez pas à vous enfuir>>", 0.02)
+						print("La DEA débarque et vous embarque tous. Vous finissez votre vie sous les barreaux, ce qu'un informateur dans la police aurait pu vous éviter")
+						fin_histoire()
+					if int(confirm) == 1 and inv["informateur"]:
+						print("\nTu prends contact avec Lalo Salamanca pour un rendez-vous sous couvert de négociations.")
+						print("Grâce à ton informateur, tu sais que la DEA est déjà au courant.")
+						print("\nTon informateur te propose un plan :")
+						print("👉 livrer les Salamanca à la DEA : en échange, ton nom disparaît des dossiers")
+						choix = demander_choix("🔹 Accepter (1)oui / (2)non : ", choix2)
+						if int(choix) == 1:
 					
-					fin_histoire()
 				elif int(confirm) == 2:
 					print("\nT'as raison c'est pas une bonne idée")
 			input("\n>>>Appuie sur entrée pour retourner au menu...")
