@@ -956,10 +956,10 @@ def travailler_pour_TUCO(money, trahison):
 					print("Tu disparais mystérieusement sans laiser de trace...")
 					fin_histoire()
 				else :
-				money -= 5000
-				time.sleep(2)
-				print("Travailler pour Tuco ne va pas être une mince affaire ...")
-				trahison = True
+					money -= 5000
+					time.sleep(2)
+					parole("Travailler pour Tuco ne va pas être une mince affaire ...", 0.01)
+					trahison = True
 			else :
 				volume = random.randint(25, 35)
 				purete = random.randint(50, 70)
