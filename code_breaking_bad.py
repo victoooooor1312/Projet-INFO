@@ -519,7 +519,22 @@ def mission_finale(money, inv):
 			elif inv["hommes de mains"] >= 5 or inv["armes"] >= 3:
 				confirm = demander_choix("\n🔹 Es-tu sûr de vouloir mener cette guerre ? (action iréversible) (1)oui/(2)non : ", choix2)
 				if int(confirm) == 1:
-					print("\nMal joué, t'as aucune chance, tout le monde meurt")
+					print("\nIl va falloir jouer finement si tu veux réussir à t'occuper du cartel, ils ont bien plus de troupes et d'armes que toi")
+					print("Tu réfléchis à plusieurs manières de les éliminer. Tu hésites entre:")
+					print("1)Leur proposer de se rencontrer dans un lieu isolé sous prétexte d'une potentielle collaboration et de les éliminer à l'aide d'un sniper.")
+					print("2)Envoyer tes hommes de mains au domicile des salamanca.")
+					print("3)")
+					confirm = demander_choix("\n 🔹Que choisis-tu?")
+					if int(confirm) == 1 and not inv["informateur"]:
+						print("Tu prend contact avec Lalo Salamanca afin d'arranger un rendez-vous pour discuter business.\n Ce dernier trouve que c'est une bonne idée et accepte de te rencontrer accompagner du reste du cartel.")
+						print("Tu missiones l'un de tes hommes de se positionner au sommet d'une colline aux alentours, sur laquelle il aura une vue globale sur les environs.")
+						print("Une fois arrivé, tu discutes avec eux en attendant l'occasion parfaite d'en finir avec eux, lorsque tout d'un coup: BANG!!")
+						print("Ce coup de feu te surprend car tu n'as pas donné l'ordre de tirer, et lorsque que tu regarde autour de toi, aucun des membres du cartel n'est blessé.")
+						print("Vous vous demandez ce qu'il se passe avec les membres du cartel lorsque vous entendez les sirènes de police retentir.")
+						print("Soudain, une voix retentit à l'aide d'un mégaphone: <<Vous êtes cernés! Ne cherchez pas à vous enfuir>>")
+						print("La DEA débarque et vous embarque tous. Vous finissez votre vie sous les barreaux, ce qu'un informateur aurait pu vous éviter")
+						fin histoire
+					
 					fin_histoire()
 				elif int(confirm) == 2:
 					print("\nT'as raison c'est pas une bonne idée")
