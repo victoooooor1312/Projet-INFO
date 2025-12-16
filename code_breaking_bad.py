@@ -519,33 +519,36 @@ def mission_finale(money, inv):
 			elif inv["hommes de mains"] >= 5 or inv["armes"] >= 3:
 				confirm = demander_choix("\n🔹 Es-tu sûr de vouloir mener cette guerre ? (action iréversible) (1)oui/(2)non : ", choix2)
 				if int(confirm) == 1:
-					print("\nIl va falloir jouer finement si tu veux réussir à t'occuper du cartel, ils ont bien plus de troupes et d'armes que toi")
+					print("\n🧠Il va falloir jouer finement si tu veux réussir à t'occuper du cartel, ils ont bien plus de troupes et d'armes que toi")
 					print("Tu réfléchis à plusieurs manières de les éliminer. Tu hésites entre:")
 					print("1)Leur proposer de se rencontrer dans un lieu isolé sous prétexte d'une potentielle collaboration et de les éliminer à l'aide d'un sniper.")
 					print("2)Envoyer tes hommes de mains au domicile des salamanca.")
 					confirm = demander_choix("\n🔹 Que choisis-tu?", choix2)
 					if int(confirm) == 1 and not inv["informateur"]:
-						print("\nTu prend contact avec Lalo Salamanca afin d'arranger un rendez-vous pour discuter business.\n Ce dernier trouve que c'est une bonne idée et accepte de te rencontrer accompagner du reste du cartel.")
+						print("\n📱Tu prend contact avec Lalo Salamanca afin d'arranger un rendez-vous pour discuter business.\n Ce dernier trouve que c'est une bonne idée et accepte de te rencontrer accompagner du reste du cartel.")
 						print("Tu missiones l'un de tes hommes de se positionner au sommet d'une colline aux alentours, sur laquelle il aura une vue globale sur les environs.")
 						input("\nAppuie sur entrée pour continuer ...")
 						print("\nUne fois arrivé, tu discutes avec eux en attendant l'occasion parfaite d'en finir avec eux, lorsque tout d'un coup: ")
-						parole("BANG!!", 0.1)
+						parole("BANG!!💥💥💥", 0.1)
 						print("Ce coup de feu te surprend car tu n'as pas donné l'ordre de tirer, et lorsque que tu regarde autour de toi, aucun des membres du cartel n'est blessé.")
 						print("Vous vous demandez ce qu'il se passe avec les membres du cartel lorsque vous entendez les sirènes de police retentir.")
 						print("Soudain, une voix retentit à l'aide d'un mégaphone:")
-						paorle("   <<Vous êtes cernés! Ne cherchez pas à vous enfuir>>", 0.02)
-						print("La DEA débarque et vous embarque tous. Vous finissez votre vie sous les barreaux, ce qu'un informateur dans la police aurait pu vous éviter")
+						parole("   📢<<Vous êtes cernés! Ne cherchez pas à vous enfuir>>", 0.02)
+						print("La DEA débarque et vous embarque tous. Vous êtes tous envoyés en prison, ce qu'un informateur dans la police aurait pu vous éviter.")
 						fin_histoire()
 					if int(confirm) == 1 and inv["informateur"]:
 						print("\nTu prends contact avec Lalo Salamanca pour un rendez-vous sous couvert de négociations.")
-						print("Grâce à ton informateur, tu sais que la DEA est déjà au courant.")
-						print("\nTon informateur te propose un plan :")
-						print("👉 livrer les Salamanca à la DEA : en échange, ton nom disparaît des dossiers")
-						choix = demander_choix("🔹 Accepter (1)oui / (2)non : ", choix2)
-						if int(choix) == 1:
+						print("\nAlors que tu es en train de te préparer pour partir au rendez-vous, ton homme infiltré dans la police t'informe qu'ils ont eu vent de ces négociations et qu'ils comptent arrêter tout le monde sur place.")
+						print("\nIl t'explique qu'il s'arrangera pour que ton nom ne ressorte pas pendant les interrogatoires, et qu'il faut uniquement que tu fasses profil bas pendant quelque temps.")
+						print("\nTout ce qu'il demande est une augmentation de son salaire, ce qui ne devrait pas être un problème une fois que tu auras la main-mise sur le territoire des Salamanca.")
+						print("\n Tu attends nerveux depuis ton laboratoire, quand soudainn ton téléphone sonne:")
+						parole("<<C'est fini. On les a eu.>>")
+						print("Tu es débarassé de tes ennemis les plus dangereux, qui remontent à l'époque où tu as tué Tuco. Plus rien ni personne ne s'oppose à l'expansion de ton empire maintenant.")
+						print("Ton contrôle s'étend au cours des années, il ne se compte plus en ville mais en pays.\n Tu seras retenu dans les mémoires de tous comme le plus grand narcotraficant de tous les temps, celui dont même les états avaient peur.")
+						fin_histoire()
 					
 				elif int(confirm) == 2:
-					print("\nT'as raison c'est pas une bonne idée")
+					print("\nT'as raison, ce n'est pas une bonne idée")
 			input("\n>>>Appuie sur entrée pour retourner au menu...")
 		
 		elif int(choix) == 4:
