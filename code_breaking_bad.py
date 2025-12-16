@@ -68,12 +68,12 @@ def la_quête_du_crackhead(sachets, money):
 	print(" 2) C'est une mauvaise idée de dealer avec eux et tu repars d'où tu viens.")
 	réponse_crackhead = demander_choix("🔹 Que fais-tu ?", choix2)
 	if int(réponse_crackhead) == 1:
-		parole("\nIls semblent être partant pour t'en acheter", 0.005)
-		parole("Mais l'un d'entre eux dit aux autres qu'ils ont juste à te voler.", 0.005)
-		parole("Tu t'enfuies le plus vite possible, mais tu te retrouves coincé dans un cul-de-sac.", 0.005)
+		parole("\nIls semblent être partant pour t'en acheter", 0.01)
+		parole("Mais l'un d'entre eux dit aux autres qu'ils ont juste à te voler.", 0.01)
+		parole("Tu t'enfuies le plus vite possible, mais tu te retrouves coincé dans un cul-de-sac.", 0.01)
 		time.sleep(1)
-		parole("Ils te laissent le choix entre leur donner gentiment 3 sachets ou te les faire voler de force, après quoi tu leur donnes sans hésiter les sachets.", 0.005)
-		parole("Avec tout le respect, ils te refilent un vieux billet tout chiffoné de 5$ pour te remercier", 0.005)
+		parole("Ils te laissent le choix entre leur donner gentiment 3 sachets ou te les faire voler de force, après quoi tu leur donnes sans hésiter les sachets.", 0.01)
+		parole("Avec tout le respect, ils te refilent un vieux billet tout chiffoné de 5$ pour te remercier", 0.01)
 		time.sleep(1)
 		sachets -= 3
 		money += 5   		
@@ -437,7 +437,7 @@ def mission_finale(money, inv, name):
 					parole(f"Tu as réussi ! Tu t'es retiré du deal et profites désormais de tes {money}$ sous les tropiques 🏝️!", 0.03)
 					fin_histoire()
 				if not inv["informateur"]:
-					input("Appuies sur entrée pour te casser au plus vite ...")
+					input("Appuie sur entrée pour te casser au plus vite ...")
 					print("\nLe feu attire trop l’attention.")
 					time.sleep(1)
 					print("La police arrive trop vite👮‍♂️")
