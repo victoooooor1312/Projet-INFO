@@ -1,9 +1,7 @@
 import random
 import time 
 
-money = 30000
-
-# Liste de liste avec les choix de réponses possible
+# Liste de listes avec les choix de réponses possibles
 choix_possibles = [
 	[1, 2],
 	[1, 2, 3],
@@ -18,20 +16,21 @@ FOND_BLANC = "\033[47m"
 NOIR = "\033[30m"
 RESET = "\033[0m"
 
+money = 30000  #Argent de départ
 
-def demander_choix(texte: str, rep_possibles: list):    # Fonction pour vérifier si les rép sont bien les choix possibles
+def demander_choix(texte: str, rep_possibles: list):    # Fonction pour vérifier si les réps sont bien dans les choix possibles
     while True:
         r = input(texte)
         if r in ("q", "Q"):
             quit()
         if not r.isdigit():
-            print("\n  ❌ Erreur : entre un nombre.\n")
+            print("\n  Entre un nombre.\n")
             continue
         r = int(r)
         if r in rep_possibles:
             return r
         else:
-            print(f"\n  ❌ Erreur : choisis parmi {rep_possibles}.\n")
+            print(f"\n  Choisis parmi {rep_possibles}.\n")
 
 def parole(texte, delai):      # Fonction pour afficher le texte progressivement
     for caractere in texte:
