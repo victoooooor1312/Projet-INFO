@@ -1264,7 +1264,7 @@ def introduction(money):     #Introduction de l'histoire avant d'arriver dans le
 					time.sleep(1)
 					print("Vous avalez la dose, mais cette fois votre corps ne tient pas.")
 					time.sleep(1)
-					print("Overdose. Vous ne vous relevez jamais.")
+					print("Overdose. Vous ne vous relevez jamais.😵")
 					parole("\nLa consommation de stupéfiant est dangereuse pour votre santé, ceci est un message du gouvernement.", 0.03)
 					fin_histoire()
 
@@ -1321,7 +1321,7 @@ def introduction(money):     #Introduction de l'histoire avant d'arriver dans le
 					time.sleep(1)
 					print("\nVous êtes libre… mais uniquement pour servir leur réseau.")
 
-				#Finir sous une dalle en béton
+				#Refuser finir sous une dalle en béton
 				elif int(choix_final) == 2 :
 					print("\nVous refusez catégoriquement de collaborer.")
 					print("Il soupire, se relève, et fait un signe de tête.")
