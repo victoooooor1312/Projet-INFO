@@ -19,7 +19,7 @@ RESET = "\033[0m"
 money = 30000  #Argent de départ
 
 
-##Toutes les fonctions du jeux##
+##Toutes les fonctions du jeu##
 
 def demander_choix(texte, rep_possibles):    # Fonction pour vérifier si les réps sont bien dans les choix possibles
     while True:
@@ -167,7 +167,7 @@ def mission_dealeur_1(money):
 		time.sleep(2)
 		parole(f"\n 👉 Il vous reste {sachets} sachets à vendre, et vous avez {money}$, comment voulez-vous procéder:\n", 0.01)
 		for num, (desc, _) in missions.items():
-			print(f" {num}) {desc}")
+			print(f" {num}) {desc}")   #Affiche uniquement les mission du dico
 		deal1 = int(input("\n🔹 Comment vends-tu ta drogue ? : "))
 		if deal1 not in missions:
 			print("❌ Choix invalide.")
@@ -176,20 +176,20 @@ def mission_dealeur_1(money):
 		sachets, money = fonction(sachets, money)    #Appel la fonction choisis
 		del missions[deal1]     #Suprimer les missions déjà réalisées
 	time.sleep(2)
-	parole("\nC'est bon, vous avez tout vendu ...💰", 0.01)
+	parole("\nC'est bon, vous avez tout vendu ...", 0.01)
 	input("\n>>>Appuies sur Entrée pour rendre l'argent au Big Boss Tuco...")
 	return sachets, money
 
-def vendre(money, blue_crystal, purete, quantite):  #Menu pour vendre de la METH
+def vendre(money, blue_crystal, purete, quantite):     #Menu pour vendre de la METH
 	while True:
 		parole("\n------ 💸 VENTE DE METH 💸 ------", 0.01)
 		parole(f"💵 Argent : {money}$ |🧪 STOCKS TOTAL : {blue_crystal}kg | Dernière production {quantite}kg pure à {purete}%", 0.01) 
 		print("\nChoisis ton type de vente :")
-		print("1) Vendre 1 kg aux petits voyous ")
-		print("2) Vendre 20 kg à Gus à un bon prix comme estimé selon le cours du marché")
-		print("3) Vente de Blue Sky 💎(150 000$ le kg pour pureté > 90%)")
-		print("4) THE BIG DEAL : 100 kg pour 2 000 000$")
-		print("5) Retour au menu")
+		print(" 1) Vendre 1 kg aux petits voyous ")
+		print(" 2) Vendre 20 kg à Gus à un bon prix comme estimé selon le cours du marché")
+		print(" 3) Vente de Blue Sky 💎(150 000$ le kg pour pureté > 90%)")
+		print(" 4) THE BIG DEAL : 100 kg pour 2 000 000$")
+		print(" 5) Retour au menu")
 		choix = demander_choix("Ton choix : ", choix_possibles[3])
 		if int(choix) == 1:
 			if blue_crystal < 1:
@@ -247,9 +247,9 @@ def synthèse_blue_crystal(money, blue_crystal, purete, quantite):  #Menu pour c
 	purete = 0     
 	quantite = 0 
 	parole("\n• Étape 1 : Choix du réactif 👨‍🔬", 0.01)
-	print("1) Pseudoéphédrine industrielle (500$)")
-	print("2) Phénylacétone pharmaceutique (2000$)")
-	print("3) Méthylamine pure (10 000$)")
+	print(" 1) Pseudoéphédrine industrielle (500$)")
+	print(" 2) Phénylacétone pharmaceutique (2000$)")
+	print(" 3) Méthylamine pure (10 000$)")
 	choix = demander_choix(" 🔹Ton choix : ", choix_possibles[1])
 	if int(choix) == 1:
 		cout = 500
@@ -271,9 +271,9 @@ def synthèse_blue_crystal(money, blue_crystal, purete, quantite):  #Menu pour c
 		purete += 33
 		quantite += 5
 	print("\n• Étape 2 : Mode de chauffage🔥")
-	print("1) Chauffage rapide (volume +, pureté -)")
-	print("2) Chauffage lent et contrôlé (pureté +++)")
-	print("3) Chauffage normal")
+	print(" 1) Chauffage rapide (volume +, pureté -)")
+	print(" 2) Chauffage lent et contrôlé (pureté +++)")
+	print(" 3) Chauffage normal")
 	choix = demander_choix("🔹 Ton choix : ", choix_possibles[1])
 	if int(choix) == 1:
 		parole("\nChauffage en cours veuillez patienter...", 0.03)
@@ -294,9 +294,9 @@ def synthèse_blue_crystal(money, blue_crystal, purete, quantite):  #Menu pour c
 		parole("🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩", 0.5)
 		parole("Cuisson terminée ! ☑️", 0.02)
 	print("\n• Étape 3 : Cristallisation")
-	print("1) Cristallisation simple (rapide)")
-	print("2) Cristallisation sous vide (pureté +)")
-	print("3) Cristallisation ultra lente (pureté +++)")
+	print(" 1) Cristallisation simple (rapide)")
+	print(" 2) Cristallisation sous vide (pureté +)")
+	print(" 3) Cristallisation ultra lente (pureté +++)")
 	choix = demander_choix("🔹 Ton choix : ", choix_possibles[1])
 	if int(choix) == 1:
 		parole("Critsallisation en cours patientez...", 0.01)
@@ -318,10 +318,10 @@ def synthèse_blue_crystal(money, blue_crystal, purete, quantite):  #Menu pour c
 		quantite += 2
 	valeur = purete*quantite*100
 	time.sleep(1)
-	print("\n=== RÉSULTAT  ===")
+	print("\n--- RÉSULTAT ---")
 	print(f" Quantité synthétisée : {quantite}kg")
 	print(f" Pureté : {purete}%")
-	print(f" Valeur estimée pour la revente, {valeur}$💰 d'après le cours du marché")
+	print(f" Valeur estimée pour la revente, {valeur}$ d'après le cour du marché")
 	print("\nTa METH est prête, c'est du vrai cristal bleue une pure folie 👨‍🔬!")
 	blue_crystal += quantite
 	return money, blue_crystal, purete, quantite
@@ -332,11 +332,11 @@ def acheter(money, inv):   #Menu pour acheter
 		parole(f"💵 Argent : {money}$ |🔫 Armes : {inv['armes']}/10 |🧍 Hommes : {inv['hommes de mains']}/5", 0.005)
 		parole(f"⚖️ Avocat (Saul Goodman) : {'Oui' if inv['avocat'] else 'Non'} | Informateur police : {'Oui' if inv['informateur'] else 'Non'}", 0.005)
 		print("\nQue veux-tu acheter ?")
-		print("1) Une arme (35 000$)  - Max 10")
-		print("2) Un homme de main (100 000$) - Max 5")
-		print("3) Avocat Saul Goodman (500 000$) - Unique")
-		print("4) Informateur dans la police (750 000$) - Unique")
-		print("5) Retour au menu")
+		print(" 1) Une arme (35 000$)  - Max 10")
+		print(" 2) Un homme de main (100 000$) - Max 5")
+		print(" 3) Avocat Saul Goodman (500 000$) - Unique")
+		print(" 4) Informateur dans la police (750 000$) - Unique")
+		print(" 5) Retour au menu")
 		choix = demander_choix("🔹 Ton choix : ", choix_possibles[3])
 		if int(choix) == 1:
 			if inv["armes"] >= 10:
@@ -394,10 +394,10 @@ def mission_finale(money, inv, name):    #Menu mission finale
 	time.sleep(1)
 	while True:
 		print("\n------ MISSIONS ------")
-		print("1) Prendre ta retraite (disparaître)")
-		print("2) Blanchiment d’argent")
-		print("3) Déclencher une guerre contre le cartel Salamanca, tes plus grand rivaux")
-		print("4) Retour au menu")
+		print(" 1) Prendre ta retraite (disparaître)")
+		print(" 2) Blanchiment d’argent")
+		print(" 3) Déclencher une guerre contre le cartel Salamanca, tes plus grand rivaux")
+		print(" 4) Retour au menu")
 		choix = demander_choix("🔹 Ton choix : ", choix_possibles[2])
 
 		#Disparaître
@@ -475,9 +475,9 @@ def mission_finale(money, inv, name):    #Menu mission finale
 			print("\nTu veux blanchir ton argent sale sans te faire chopper")
 			print("Mais chaque option a ses risques.")
 			print("\nOptions possible :")
-			print("1) Los Pollos Hermanos 🐔")
-			print("2) Une laverie 🧼")
-			print("3) Un car wash 🚗")
+			print(" 1) Los Pollos Hermanos 🐔")
+			print(" 2) Une laverie 🧼")
+			print(" 3) Un car wash 🚗")
 			choix_blanchiment = demander_choix("🔹 Ton choix : ", choix_possibles[1])
 			if not inv["informateur"] or not inv["avocat"]:
 				print("Mauvaise idée sans aucun contact et aucune expérience dans le millieu tu te choppes un contrôle fiscale")
@@ -595,12 +595,12 @@ def menu_principal(money, lieu, blue_crystal, name, purete, quantite):  #Menu pr
 	while True:
 		print("\n------ 🔹 MENU 🔹 ------")
 		parole(f"💵 Argent : {money}$  | 🧪 METH : {blue_crystal}kg ", 0.01)
-		print("1) Cook de la METH")
-		print("2) Vendre ta production")
-		print("3) Acheter du matériel / armes")
-		print("4) Partir en mission")
-		print("5) Voir ton stock")
-		print("6) Quitter le jeu")
+		print(" 1) Cook de la METH")
+		print(" 2) Vendre ta production")
+		print(" 3) Acheter du matériel / armes")
+		print(" 4) Partir en mission")
+		print(" 5) Voir ton stock")
+		print(" 6) Quitter le jeu")
 		menu = demander_choix("🔹 Ton choix : ", choix_possibles[4])
 		if int(menu) == 1:
 			money, blue_crystal, purete, quantite = synthèse_blue_crystal(money, blue_crystal, purete, quantite)     #Menu pour cook
@@ -616,7 +616,7 @@ def menu_principal(money, lieu, blue_crystal, name, purete, quantite):  #Menu pr
 		elif int(menu) == 4:
 				money, inv, name = mission_finale(money, inv, name)        #Menu des missions
 				input("\n>>>Appuie sur entrée pour retourner au menu...")
-		elif int(menu) == 5:
+		elif int(menu) == 5:                     #Afficher l'inventaire et les stats
 			print(f"\n•🛢️ Stock actuel : {blue_crystal}kg")
 			print(f"•💵 Argent : {money}$")
 			print(f"•🧪 METH produite au total depuis le début : {tot}kg")
@@ -667,7 +667,7 @@ def intervention_GUS(money, prix, lieu, name):
 			time.sleep(2)
 			parole("Ton corps est retrouvé sans vie dans un fossé lendemain ...🪦", 0.03)
 			fin_histoire()
-	if money > prix :
+	elif money >= prix :
 		print("\nTu as plus qu’assez d’argent pour financer le projet pourquoi accpeter ? 💼 .")
 		time.sleep(1)
 		parole("Gus marque un silence…", 0.03)
@@ -689,7 +689,7 @@ def intervention_GUS(money, prix, lieu, name):
 			time.sleep(1)
 			parole(f"Mais tu sens que cette histoire n’est pas terminée… tu continues alors l'installation de ton labo dans ton {lieu}, il te manque le matos de chimie", 0.03)
 			input("\nAppuie sur Entée pour continuer...")
-			print("\n Un soir alors 2 hommes en noir t'attendent à la sortie de ton {lieu}.")
+			print("\n Un soir 2 hommes en noir t'attendent à la sortie de ton {lieu}.")
 			time.sleep(1)
 			parole("« Mr Fring souhaite vous parler. »", 0.02)
 			print("\nTu as deux choix :")
@@ -775,7 +775,7 @@ def baron_de_la_drogue(money):
 	money, blue_crystal, purete, quantite = synthèse_blue_crystal(money, blue_crystal, purete, quantite)
 	time.sleep(2)
 	print("\nGustavo Fring observe le crystal bleu que tu viens de produire avec un léger sourir : ")
-	parole("  — Impressionnant. Pour une première production, c’est remarquable. Continuez ainsi je compte sur vous pour batir un empire de la drogue.", 0.03)
+	parole("  - Impressionnant. Pour une première production, c’est remarquable. Continuez ainsi je compte sur vous pour batir un empire de la drogue.", 0.03)
 	parole("  - La pureté de ton produit est remarquable, je m'engage à être ton revendeur", 0.03)
 	time.sleep(0.5)
 	input("\n>>>À présent tu gères toi-même ton business. Appuie sur Entrée pour accéder au menu de ton business...")
@@ -859,7 +859,7 @@ def faire_tomber_TUCO(money):
 			print("☠️ Tu l’as eu. Tu prend vite la fuite pour éviter les représailles. C’est terminé pour lui.")
 	time.sleep(1)
 	print("\nTuco est mort, maintenannt c'est toi le nouveau baron de la drogue du coin !")
-	print("\n----------------------------------------------\n")
+	print("----------------------------------------------")
 	money = baron_de_la_drogue(money)
 
 
@@ -869,7 +869,7 @@ def fuite(money):
 	print("1) Aller en direction de la voiture et espérer que les clés sont restés sur le contact 🚗")
 	print("2) Continuer de courir en espérant les perdre dans les ruelles voisines🏃")
 	choix_fuite = demander_choix("🔹 Comment vous échappez-vous?", choix_possibles[0])
-	voiture = random.randint(1,2)
+	voiture = random.randint(1,2)    #1 chance sur 2 que la voiture soit ouverte
 	if int(choix_fuite) == 1 and voiture == 1:
 		print("\nGros coup de chance! Les clés sont encore là, tu t'empresses de démarrer pendant que les membres du gang sortent du batîment et commencent à te tirer dessus.")
 		print("Plusieurs balles touchent la voiture, mais pas de blessures pour toi.")
@@ -886,7 +886,7 @@ def fuite(money):
 		print("1) Casser la vitre pour tenter de voler la voiture")
 		print("2) Repartir en courant dans l’autre direction")
 		choix_bloque = demander_choix("\n🔹Ton choix : ", choix_possibles[0])
-		action = random.randint(1, 2)	
+		action = random.randint(1, 2)	#1 chance sur 2 de réussir à briser la vitre
 		if int(choix_bloque) == 1 and action == 1:
 			print("\n💥 Tu éclates la vitre avec ton coude, ça fait un bruit énorme.")
 			print("Tu montes, tu démarres… et tu parviens à t’enfuir de justesse.")
@@ -1181,6 +1181,8 @@ def introduction(money):     #Introduction de l'histoire avant d'arriver dans le
 					print(f"Vous avez perdu TOUTES vos économies vous ne disposez plus que de {money}$")
 					break 
 			time.sleep(2)
+			
+			#Approche du dealeur
 			print("\nVous êtes dépité, viré du casino et n'avait plus un seul euros sur vous ! Un homme en capuche s'approche de vous et vous propose ce deal : ")
 			time.sleep(1)
 			parole(" - Je t'ai entendu parler dans le casino, t'as plus rien et tu t'y connais en informatique. Je te propose un nouveau job, où tu gagneras en un mois ce que t'aurais gagné en une vie. J'étais comme toi, maintenant je suis plein aux as...", 0.02)
@@ -1196,11 +1198,11 @@ def introduction(money):     #Introduction de l'histoire avant d'arriver dans le
 			elif int(décision) == 2 :
 				print("\nVous refusez et tentez de partir pour rentrer chez vous.")
 				print("L'homme vous rattrappe aussitôt, sors un flingue, canon sur la tempe il vous dit :")
-				parole("\n - Je crois que t'as pas bien compris petit merdeux, ici c'est moi qui décide, et j'ai décidé que tu allez travailler pour moi, revend moi ces sachets de méthamphétamine d'ici la fin de semaine et ramène le fric au big boss Tuco !", 0.02)
+				parole("\n - Je crois que t'as pas bien compris petit merdeux, ici c'est moi qui décide, et j'ai décidé que tu allez travailler pour moi, revends-moi ces sachets de méthamphétamine d'ici la fin de semaine et ramène le fric au big boss Tuco !", 0.02)
 				time.sleep(1)
 				print("\n Vous êtes dans une impasse pas d'autre choix que d'obéir aux ordres")
 				time.sleep(1)
-			money = le_cartel(money) # Début dans le cartel
+			money = le_cartel(money)   # Début dans le cartel
 
 	#Manifestation
 	elif int(reponse_1) == 2: 
@@ -1286,7 +1288,7 @@ def introduction(money):     #Introduction de l'histoire avant d'arriver dans le
 			elif int(reponse_DEAL) == 2 :
 				print("\nVous acceptez la proposition :")
 				parole(" - « Bienvenue dans l’entreprise. »", 0.03)
-				print("\nIl vous glisse discrètement une dizaine de petits sachets dans la main, c'est de la metanphétamine.\n")
+				print("\nIl vous glisse discrètement une dizaine de petits sachets dans la main, c'est de la métanphétamine.\n")
 				parole(" - « Tu les écoules aujourd’hui. Prix simple : 500$ la dose. Tu prend 10% pour toi et le reste tu iras les données au big boss Tuco. »", 0.03)
 				time.sleep(1)
 				print("Vous venez officiellement d'entrer dans la famille. Et en sortir sera presque impossible.")
